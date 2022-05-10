@@ -1,5 +1,5 @@
 let article = document.querySelector('.blg-cont');
-const blogs = fetch(`${backEndURL}/api/v1/articles`)
+const blogs = fetch(`https://my-brand-project.herokuapp.com/api/v1/articles`)
     .then(data => data.json());
 
 blogs.then(res => {
