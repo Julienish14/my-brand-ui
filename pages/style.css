@@ -917,24 +917,34 @@ footer{
     display: flex;
     justify-content: space-between;
     padding: 100px 10% 50px 10%;
+  
 }
 .login-left form input{
     margin-bottom: 10px;
     width: 100%;
-    background-color: transparent;
     color: white;
 
 }
 .login-left form .form-control{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
     padding: 5px 0px;
     border: none;
+    background: none;
+    outline: none;
+    width: 250px;
     border-bottom: 0.5px white solid;
 }
 .login-left form .submit{
+    background-color: white;
+    outline: none;
+    height: 30px;
     margin-top: 10px;
     padding: 3px 10px;
     border-radius: 15px;
-    color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
 }
 .login-right div{
     width: 100%;
@@ -957,6 +967,38 @@ footer{
     font-size: 1.3em;
     text-decoration: underline;
     cursor: pointer;
+}
+
+
+
+  /* -----------============= User signUp ==============-----------------*/
+.signup-cont{
+    margin-top: 70px;
+    margin-bottom: 180px;
+    display: flex;
+    justify-content: center;
+}
+.signup-cont .form-control{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    background: none;
+    color: white;
+    margin-bottom: 20px;
+    height: 20px;
+    width: 250px;
+    border: none;
+    outline: none;
+    padding: 15px 5px;
+    border-bottom: 1px solid white;
+}
+.signup-cont .submit{
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
 }
 @media(max-width: 1200px){
     /* =====================-----------Works -----------==================== */
@@ -1143,7 +1185,7 @@ footer{
         width: 100%;
         padding: 0px 30px;
     }
-
+  
  
      
 }
