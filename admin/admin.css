@@ -177,11 +177,11 @@ input[type="submit"]:hover{
 }
 .new-blog{
   margin: 30px 100px;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
 }
 
 .new-blog form input{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
   width: 100%;
   height: 35px;
   outline: none;
@@ -190,7 +190,16 @@ input[type="submit"]:hover{
   margin: 5px 0px;
   border-radius: 5px;
 }
+.new-blog form textarea{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  background: white;
+  width: 100%;
+  color: black;
+  outline: none;
+  font-size: 1em;
 
+}
 .new-blog form .submit-blog{
   width: 200px;
 }
