@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoginToYourAccount | julienishimwe | portfolio</title>
+    <title>Sign Up | julienishimwe | portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <link rel="shortcut icon" type="image" href="../img/title-logo.jpg">
@@ -18,7 +18,8 @@
             <form action="">
                 <input type="text" class="form-control" placeholder="Full name." required> <br>
                 <input type="text" class="form-control" placeholder="Your Email." required> <br>
-                <input type="password" class="form-control" placeholder="Password." required><br>
+                <input type="password" id="pwd" class="form-control" placeholder="Password." required>
+                <i class="fa fa-eye" id="eye"></i><br>
                 <input type="submit" class="submit" value="submit">
             </form>
     </div>
@@ -27,5 +28,18 @@
             <p>julish &copy copyright 2022</p>
         </div>
     </div>
+    <script>
+        var pwd = document.getElementById('pwd');
+        var eye = document.getElementById('eye');
+    
+        eye.addEventListener('click',togglePass);
+    
+        function togglePass(){
+            eye.classList.toggle('active');
+    
+            (pwd.type == 'password') ? pwd.type = 'text' :
+            pwd.type = 'password';
+        }
+    </script>	
 </body>
 </html>

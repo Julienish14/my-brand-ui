@@ -3,9 +3,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
-body{
+.admin-login{
   margin: 0;
   padding: 0;
   background: black; 
@@ -47,6 +47,13 @@ form .txt_field{
   outline: none;
   color: whitesmoke;
 
+}
+.txt_field i{
+  color: rgb(187, 182, 182);
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  cursor: pointer;
 }
 .txt_field label{
   position: absolute;
@@ -103,3 +110,93 @@ input[type="submit"]:hover{
   transition: .5s;
 }
 
+
+/* --------====== blogs dashboard css ======--------- */
+
+.mainbar-blog{
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: 10% 20% auto 20%;
+    grid-template-areas: "dash-head dash-head dash-head"
+    ". add-new-blog ." 
+    ". blog-part ."
+    ". . ."
+}
+.add-new-blog{
+  grid-area: add-new-blog;
+  border: 1px solid white;
+  background: black;
+  align-self: end;
+  margin-left: 50px;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.blog-part{
+  /* border: 1px solid red; */
+  grid-area: blog-part;
+}
+
+.blog-part .tab{
+  grid-area: tab;
+  width: 90%;
+  height: 50%;
+  border: 2px white solid;
+  border-radius: 10%;   
+  border-collapse: collapse;
+  margin: 7% 5%;
+  padding: 20px;
+  color: rgb(117, 115, 115);
+}
+.blog-part .tab th{
+  text-align: center;
+}
+.blog-part .tab td{
+  text-align: center;
+}
+
+/*-------====== New blog ======-----*/
+.partTwo{
+  display: grid;
+  grid-template-columns: 5% auto 5%;
+  grid-template-rows: 10% 20% auto 20%;
+  grid-template-areas: "dash-head dash-head dash-head"
+  ". title-head ." 
+  ". blog-part ."
+  ". . ."
+}
+.title-head{
+  grid-area: title-head;
+  justify-self: center;
+  align-self: end;
+  color: white;
+  font-size: 1.6em;
+}
+.new-blog{
+  margin: 30px 100px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.new-blog form input{
+  width: 100%;
+  height: 35px;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 1em;
+  margin: 5px 0px;
+  border-radius: 5px;
+}
+
+.new-blog form .submit-blog{
+  width: 200px;
+}
+
+.new-blog form label{
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}

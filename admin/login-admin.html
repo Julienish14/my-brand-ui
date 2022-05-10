@@ -5,26 +5,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>login Dashboard | julienishimwe | portfolio</title>
-  <link rel="stylesheet" href="logintodashCss.css">
+  <link rel="stylesheet" href="admin.css">
   <link rel="shortcut icon" type="image" href="../img/title-logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
 
 </head>
-<body>
+<body class="admin-login">
     <div class="center">
       <h3>Admin</h3>
-      <form action="dashboard.html">
+      <form action="index.html">
         <div class="txt_field">
           <input type="text" required>
           <span></span>
           <label>Username</label>
         </div>
         <div class="txt_field">
-          <input type="password" required>
+          <input id="pwd" type="password" required>
           <span></span>
           <label>Password</label>
+          <i class="fa fa-eye" id="eye"></i>
         </div>
           <input type="submit" value="Login">
       </form>
     </div>
+
+    <script>
+      var pwd = document.getElementById('pwd');
+        var eye = document.getElementById('eye');
+    
+        eye.addEventListener('click',togglePass);
+    
+        function togglePass(){
+            eye.classList.toggle('active');
+    
+            (pwd.type == 'password') ? pwd.type = 'text' :
+            pwd.type = 'password';
+        }
+    </script>
 </body>
 </html>

@@ -18,7 +18,8 @@
         <div class="login-left">
             <form action="">
                 <input type="text" class="form-control" placeholder="Email." required > <br>
-                <input type="password" class="form-control" placeholder="Password." required><br>
+                <input type="password" id="pwd" class="form-control" placeholder="Password." required>
+                <i class="fa fa-eye" id="eye"></i><br>
                 <input type="submit" class="submit" value="Login">
             </form>
         </div>
@@ -47,5 +48,18 @@
             <p>If You don't have an account Please <strong><a href="../pages/signUp.html">Sign Up </a> </strong></p>
         </div>
     </div>
+    <script>
+        var pwd = document.getElementById('pwd');
+        var eye = document.getElementById('eye');
+    
+        eye.addEventListener('click',togglePass);
+    
+        function togglePass(){
+            eye.classList.toggle('active');
+    
+            (pwd.type == 'password') ? pwd.type = 'text' :
+            pwd.type = 'password';
+        }
+    </script>	
 </body>
 </html>

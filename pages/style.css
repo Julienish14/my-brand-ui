@@ -754,7 +754,9 @@ footer{
     padding: 5px;
     border-radius: 5px;
 }
-
+.sidebar .dbtn a{
+    padding-right: 42px;
+}
 .mainbar{
    display: grid;
    grid-template-columns: 5% auto 5%;
@@ -767,29 +769,29 @@ footer{
    ". . .";
 
 }
-.mainbar .dash-head{
+.dash-head{
     background-color: #10162C;
     grid-area: dash-head;
     display: grid;
     grid-template-columns: 5% auto 5%;
     grid-template-areas: ". search-dash admin-profile";
 }
-.mainbar .search-dash{
+.search-dash{
     grid-area: search-dash;
     justify-self: end;
     align-self: center;
     margin-right: 20px;
 }
-.mainbar .search-dash input{
+.search-dash input{
     width: 200px;
     border-radius: 30px;
     padding: 3px 10px;
 }
-.mainbar .admin-profile{
+.admin-profile{
     grid-area: admin-profile;
     align-self: center;
 }
-.mainbar .admin-profile img{
+.admin-profile img{
     border-radius: 50%;
 }
 .mainbar .middle-part{
@@ -811,7 +813,7 @@ footer{
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
 }
-.dash-cards div{
+.dash-cards div a{
     padding: 10px;
     width: 200px;
     height: 90px;
@@ -822,11 +824,19 @@ footer{
 }
 .dash-cards div i{
     font-size: 2.5em;
+    color: black;
 }
 .dash-cards div h3{
     margin-top: 10px;
     font-size: 1.5em;
     font-weight: bolder;
+    color: black;
+}
+.dash-cards div h2{
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: black;
 }
 .middle-part .select-dash-period{
     grid-area: select-dash;
@@ -923,12 +933,15 @@ footer{
     margin-bottom: 10px;
     width: 100%;
     color: white;
-
+}
+.login-left form i{
+    margin-left: -18px;
+    cursor: pointer;
 }
 .login-left form .form-control{
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.1em;
-    padding: 5px 0px;
+    padding: 5px 5px;
     border: none;
     background: none;
     outline: none;
@@ -990,6 +1003,10 @@ footer{
     outline: none;
     padding: 15px 5px;
     border-bottom: 1px solid white;
+}
+.signup-cont form i{
+    margin-left: -18px;
+    cursor: pointer;
 }
 .signup-cont .submit{
     width: 250px;
