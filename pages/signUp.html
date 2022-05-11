@@ -15,9 +15,9 @@
         <h3>Sign Up</h3>
     </div>
     <div class="signup-cont">
-            <form action="">
-                <input type="text" class="form-control" placeholder="Full name." required> <br>
-                <input type="text" class="form-control" placeholder="Your Email." required> <br>
+            <form action="" id="signup">
+                <input type="text" id="fullname" class="form-control" placeholder="Full name." required> <br>
+                <input type="text" id="email" class="form-control" placeholder="Your Email." required> <br>
                 <input type="password" id="pwd" class="form-control" placeholder="Password." required>
                 <i class="fa fa-eye" id="eye"></i><br>
                 <input type="submit" class="submit" value="submit">
@@ -40,6 +40,61 @@
             (pwd.type == 'password') ? pwd.type = 'text' :
             pwd.type = 'password';
         }
+
+        /*
+        const url = "https://my-brand-project.herokuapp.com";
+        const formEl = document.querySelector('form');
+        formEl.addEventListener('submit', async (e) => {
+           e.preventDefault();
+           const formData = new FormData(formEl); 
+         
+           try{
+               const response = await fetch(`${url}/api/v1/users/signUp`, {
+                   method: 'post',
+                   body: formData,
+                   headers: {
+                       'Content-Type': 'application/json'
+                   }
+               });
+
+               const json = await response.json();
+               console.log(json);
+           }catch(e){
+                console.error(e);
+                alert('there\'s an error');
+           }
+        });
+        */
+    </script>
+    <script>
+        document.getElementById('signup').addEventListener("submit", (e) => {
+            e.preventDefault();
+                const fullname = document.getElementById('fullname').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('pwd').value;
+
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                "full_name": fullname,
+                "email": email,
+                "password": password
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("https://my-brand-project.herokuapp.com/api/v1/users/signUp", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+
+        });
     </script>	
 </body>
 </html>

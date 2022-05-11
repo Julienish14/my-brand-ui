@@ -84,8 +84,31 @@
                 </form>
             </div>
         </div>
-   
-    
     </div>
+
+    <script>
+        const url = "https://my-brand-project.herokuapp.com";
+        const formEl = document.querySelector('form');
+        formEl.addEventListener('submit', async (e) => {
+           e.preventDefault();
+           const formData = new FormData(formEl); 
+         
+           try{
+               const response = await fetch(`${url}/api/v1/articles`, {
+                   method: 'post',
+                   body: formData,
+                   headers: {
+                       'Content-Type': 'application/json'
+                   }
+               });
+
+               const json = await response.json();
+               console.log(json);
+           }catch(e){
+                console.error(e);
+                alert('there\'s an error');
+           }
+        });
+    </script>
 </body>
 </html>

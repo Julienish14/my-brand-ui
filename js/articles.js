@@ -3,7 +3,7 @@ const blogs = fetch(`https://my-brand-project.herokuapp.com/api/v1/articles`)
     .then(data => data.json());
 
 blogs.then(res => {
-    res.data.blogs.map(blog => {
+    res.data.posts.map(blog => {
         let date = `${new Date(blog.date)}`.split(" ");
         article.innerHTML += ` <div class="blg-date">${date[0]} ${date[1]} ${date[2]} ${date[3]}</div>
         <div class="blg-title">${blog.title}</div>
