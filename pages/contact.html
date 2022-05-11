@@ -22,10 +22,10 @@
         <div class="content">
             <div class="left-cont">
                 <h4>I'd appreciate to hearing from you.</h4>
-                <form action="">
-                    <input type="text" class="form-control" placeholder="Your name." > <br>
-                    <input type="text" class="form-control" placeholder="Your email." ><br>
-                    <textarea name="message"  class="form-control" placeholder="Share your thoughts"></textarea><br>
+                <form action="" id="contact-message">
+                    <input type="text" id="name" class="form-control" placeholder="Your name." > <br>
+                    <input type="text" id="email" class="form-control" placeholder="Your email." ><br>
+                    <textarea name="message"  id="message" class="form-control" placeholder="Share your thoughts"></textarea><br>
                     <input type="submit" class="submit" value="Send message">
                 </form>
             </div>
@@ -56,28 +56,35 @@
             <div class="horiz-line"></div>
         </div>
     </section>
-    <script>
-        const url = "https://my-brand-project.herokuapp.com";
-        const formEl = document.querySelector('form');
-        formEl.addEventListener('submit', async (e) => {
-           e.preventDefault();
-           const formData = new FormData(formEl); 
-         
-           try{
-               const response = await fetch(`${url}/api/v1/messages`, {
-                   method: 'post',
-                   body: formData,
-                   headers: {
-                       'Content-Type': 'application/json'
-                   }
-               });
 
-               const json = await response.json();
-               console.log(json);
-           }catch(e){
-                console.error(e);
-                alert('there\'s an error');
-           }
+    <script>
+        document.getElementById('contact-message').addEventListener("submit", (e) => {
+            e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                myHeaders.append("Cookie", "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJKdWxpZW4gaXNoaW13ZSIsImVtYWlsIjoianVsaXNoMTIzQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyNzEyNjU3NjNmNzY4MDhiOWI0YzA5MiIsImlhdCI6MTY1MjI1MTY5OCwiZXhwIjoxNjUyMzM4MDk4fQ.ykdRR1yA3W43LSZfCVkxHpykbHZiLwNrhQ-BrccQwQA");
+
+                var raw = JSON.stringify({
+                "name": name,
+                "email": email,
+                "message": message
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("https://my-brand-project.herokuapp.com/api/v1/messages", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
         });
     </script>
 </body>
