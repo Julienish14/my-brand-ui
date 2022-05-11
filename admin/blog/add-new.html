@@ -73,13 +73,13 @@
         </div>
         <div class="blog-part">
             <div class="new-blog">
-                <form action="">
+                <form action="" id="newArticle">
                     <label>Title</label><br>
-                    <input type="text" class="text-input"><br>
+                    <input type="text" id="title" class="text-input"><br>
                     <label>Content</label> <br>
-                    <textarea name="content"></textarea> <br>
+                    <textarea name="content" id="content"></textarea> <br>
                     <label>Image</label> <br>
-                    <input type="file" name="blogImage"> <br>
+                    <input type="file" id="image" name="blogImage"> <br>
                     <input type="submit" class="submit-blog" name="submit">
                 </form>
             </div>
@@ -87,27 +87,34 @@
     </div>
 
     <script>
-        const url = "https://my-brand-project.herokuapp.com";
-        const formEl = document.querySelector('form');
-        formEl.addEventListener('submit', async (e) => {
-           e.preventDefault();
-           const formData = new FormData(formEl); 
-         
-           try{
-               const response = await fetch(`${url}/api/v1/articles`, {
-                   method: 'post',
-                   body: formData,
-                   headers: {
-                       'Content-Type': 'application/json'
-                   }
-               });
+       document.getElementById('newArticle').addEventListener("submit", (e) => {
+            e.preventDefault();
+                const title = document.getElementById('title').value;
+                const content = document.getElementById('content').value;
+                const blogImage = document.getElementById('image').value;
 
-               const json = await response.json();
-               console.log(json);
-           }catch(e){
-                console.error(e);
-                alert('there\'s an error');
-           }
+
+                var myHeaders = new Headers();
+                myHeaders.append("Cookie", "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJKdWxpZW4gaXNoaW13ZSIsImVtYWlsIjoianVsaXNoMTIzQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyNzEyNjU3NjNmNzY4MDhiOWI0YzA5MiIsImlhdCI6MTY1MjI1MTY5OCwiZXhwIjoxNjUyMzM4MDk4fQ.ykdRR1yA3W43LSZfCVkxHpykbHZiLwNrhQ-BrccQwQA");
+
+                var formdata = new FormData();
+                formdata.append("title", title);
+                formdata.append("content", content);
+                // formdata.append("blogImage", fileInput.files[0], blogImage);
+
+                var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: formdata,
+                redirect: 'follow'
+                };
+
+                fetch("https://my-brand-project.herokuapp.com/api/v1/articles", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result), alert('New article created!'))
+                .catch(error => console.log('error', error));
+
+
         });
     </script>
 </body>
