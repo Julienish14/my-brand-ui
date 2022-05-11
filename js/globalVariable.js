@@ -1,4 +1,4 @@
-let globalURL = window.location.origin.includes("github") ? "https://my-brand-project.herokuapp.com" : "http://localhost:4500";
+let globalURL = "https://my-brand-project.herokuapp.com" ;
 
 function getCookie(cname) {
     let name = cname + "=";
@@ -16,5 +16,3 @@ function getCookie(cname) {
     return "";
 }
 
-
-let jwt = getCookie("jwt");

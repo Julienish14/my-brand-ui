@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.landing, .about, .blogs, .blog-view{
+.landing, .about, .blogs, .blog-view, .articles{
     background-color: #88786B;
     font-family: "Poppins", sans-serif;
 }
@@ -21,7 +21,7 @@
     justify-content: flex-start;
 } 
 
-.landing header, .contacts header .about header{
+.landing header, .contacts header, .about header, .articles header{
     position: relative;
     top: 0;
     width: 100%;
@@ -306,6 +306,11 @@ footer{
 }
 
 /*--------==========***** Blog ***********===========----------*/
+
+
+
+
+
 .blogs{
     display: grid;
     grid-template-columns: 5% 10% 10% auto 10% 10% 5%;

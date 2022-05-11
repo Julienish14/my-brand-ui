@@ -1,9 +1,8 @@
-const contactform=document.querySelector('#form')
-contactform.addEventListener('submit', async (e) => {
+const loginform=document.querySelector('#form');
+loginform.addEventListener('submit', async (e) => {
     e.preventDefault();
 const email = document.getElementById('email').value;
   const password = document.getElementById('pwd').value;
-  const globalURL= window.location.origin.includes("herokuapp") ? window.location.origin : "http://localhost:3000";
   if (email == '' || password == '') {
     alert(warning, 'Please fill empty fields !!');
     return 0;
@@ -13,19 +12,18 @@ const email = document.getElementById('email').value;
       email,
       password,
     });
-    console.log(res);
     localStorage.setItem(`token`,`${res.data.token}`);
-    localStorage.setItem(`role`,`${res.data.data.user.role}`);
+    localStorage.setItem(`isAdmin`,`${res.data.user[0].isAdmin}`);
     alert( 'Logged in successfully');
     setTimeout(() => {
-      if(localStorage.getItem("role") === "admin"){
-        return location.assign('./dashboard.html');
+      if(localStorage.getItem("isAdmin") == "true"){
+        return location.assign('../admin/index.html');
       }
-      location.assign('./index.html');
+      location.assign('../index.html');
     }, 3000);
   } catch (error) {
     console.log(error);
-    if (error.response.status === 401) {
+    if (error.response?.status === 401) {
       alert(`Wrong email or password`);
     } else {
       alert(`${error.message}`);

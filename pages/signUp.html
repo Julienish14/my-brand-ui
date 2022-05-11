@@ -91,7 +91,9 @@
 
                 fetch("https://my-brand-project.herokuapp.com/api/v1/users/signUp", requestOptions)
                 .then(response => response.text())
-                .then(result => console.log(result))
+                .then(result => {console.log(result)
+                alert( 'signup successfully');}
+                )
                 .catch(error => console.log('error', error));
 
         });
