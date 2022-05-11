@@ -19,7 +19,7 @@ const email = document.getElementById('email').value;
       if(localStorage.getItem("isAdmin") == "true"){
         return location.assign('../admin/index.html');
       }
-      location.assign('../index.html');
+      location.assign('../pages/blogs.html');
     }, 3000);
   } catch (error) {
     console.log(error);
