@@ -23,7 +23,7 @@ const article_list = document.querySelector('.tab');
                     <td>${date[2]} ${date[1]} ${date[3]}</td>
                     <td>${giveMeBlog.comments.length}</td>
                     <td>${giveMeBlog.likes.length}</td>
-                    <td> <a href="update.html" ><i class="fa-solid fa-pen-to-square"></i></a> <a href="#"><i class="fa-solid fa-x"></i></a></td>
+                    <td> <a href="update.html" ><i class="fa-solid fa-pen-to-square"></i></a> <a href="#" onClick="deleteArticle('${giveMeBlog._id}')"><i class="fa-solid fa-x"></i></a></td>
 
                 </tr>
                 `;
@@ -33,6 +33,21 @@ const article_list = document.querySelector('.tab');
             console.log(err);
         });
 
-
+        async function deleteArticle(id) {
+            alert('delete blog...');
+            try {
+                await axios
+                    .delete(`${global}/api/v1/articles/${id}`);
+                location.reload()
+            } catch (error) {
+              
+                if (error.response.data?.message) {
+                    alert(`${error.response.data.message}`);
+                } else {
+                    alert(`${error.message}`);
+                }
+            }
+        }
+    
 
 
