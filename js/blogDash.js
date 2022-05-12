@@ -17,12 +17,13 @@ const article_list = document.querySelector('.tab');
                 let date = `${new Date(giveMeBlog.date)}`.split(" ");
                 article_list.innerHTML += ` 
                 <tr>
-                    <td>${giveMeBlog.blogImage}</td>
+            <td><img class="blog-image" src="${serverURL}/uploads/${giveMeBlog.blogImage}" alt="image" width="60px" height="50px">
+            </td>
                     <td>${giveMeBlog.title}</td>
                     <td>${date[2]} ${date[1]} ${date[3]}</td>
                     <td>${giveMeBlog.comments.length}</td>
                     <td>${giveMeBlog.likes.length}</td>
-                    <td> <a href="update.html"><i class="fa-solid fa-pen-to-square"></i></a> <a href="#"><i class="fa-solid fa-x"></i></a></td>
+                    <td> <a href="update.html" ><i class="fa-solid fa-pen-to-square"></i></a> <a href="#"><i class="fa-solid fa-x"></i></a></td>
 
                 </tr>
                 `;
