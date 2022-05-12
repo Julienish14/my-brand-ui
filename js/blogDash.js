@@ -17,6 +17,7 @@ const article_list = document.querySelector('.tab');
                 let date = `${new Date(giveMeBlog.date)}`.split(" ");
                 article_list.innerHTML += ` 
                 <tr>
+                    <td>${giveMeBlog.blogImage}</td>
                     <td>${giveMeBlog.title}</td>
                     <td>${date[2]} ${date[1]} ${date[3]}</td>
                     <td>${giveMeBlog.comments.length}</td>
