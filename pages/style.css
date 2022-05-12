@@ -21,7 +21,7 @@
     justify-content: flex-start;
 } 
 
-.landing header, .contacts header, .about header, .articles header{
+.landing header, .contacts header, .about header, .articles header, .showArt header{
     position: relative;
     top: 0;
     width: 100%;
@@ -306,7 +306,7 @@ footer{
 }
 
 /*---------=========******* Article *********==========----------*/
-.articles{
+.articles, .showArt{
     background: black;
     color: white;
     /* font-family: "Poppins", sans-serif; */
@@ -324,7 +324,7 @@ footer{
 .articles aside .vert-line{
     border-left: 3px white solid;
 }
-article{
+.art-list{
     width: 70%;
     margin: 20px auto;
 }
@@ -388,6 +388,85 @@ article{
     margin-top: 210px;
 }
 
+/*==============--------**** Show Article ****--------=======*/
+
+.showArt-container{
+    width: 50%;
+    margin: 0px auto;
+}
+.showArt aside .socialmedia a{
+    background-color: white;
+    font-family: 'Poppins';
+
+}
+.showArt aside .socialmedia i{
+    color: black;
+}
+.showArt aside .vert-line{
+    border-left: 3px white solid;
+}
+
+.showArt-head{
+    width:75%;
+    margin: 20px auto 100px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-part{
+    margin:50px 0px;
+}
+.comment-part form textarea{
+    width: 50%;
+    background: whitesmoke;
+    outline: none;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+}
+.comment-part form button{
+    width: 100px;
+    outline: none;
+    background-color: rgb(49, 49, 150);
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    height: 35px;
+    border-radius: 10px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+.comment-part form button:hover{
+    background-color: rgb(10, 10, 73);
+    color: antiquewhite;
+    transition: 2s ease-in-out;
+}
+.showArt-cont div{
+    margin: 20px 0px;
+    text-align: justify;
+}
+
+.comment-area{
+    width: 70%;
+    margin: 50px auto;
+    background: #121213;
+    padding: 30px;
+}
+.comment-info{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.comment-info .comment-line{
+    width: 35%;
+    border-bottom: 3px solid white;
+    margin:  5px auto;
+    border-radius: 50%;
+}
+.commentBy, .commented-date{
+    font-size: smaller;
+    color: wheat;
+}
 /*==============--------**** Blog view ****--------=======*/
 
 .blog-view{

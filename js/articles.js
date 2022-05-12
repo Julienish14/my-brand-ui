@@ -1,5 +1,7 @@
 let article = document.querySelector('.art-container');
 const blogs = fetch(`${serverURL}/api/v1/articles`)
+// const blogs = fetch(`http://localhost:4500/api/v1/articles`)
+
     .then(data => data.json());
 
 blogs.then(res => {
@@ -12,9 +14,12 @@ blogs.then(res => {
         </div>
         <div class="art-info">
             <h3 class="art-title"> <a class="text-link" href="./blogdisplay.html">${blog.title}</a></h3>
-            <div class="art-meta"> <span class="date">Published ${date[2]} ${date[1]} ${date[3]}</span> <span class="art-comment"> <a class="text-link" href="#">${blog.comments.length} comments</a></span> </div>
+            <div class="art-meta"> <span class="date">Published ${date[2]} ${date[1]} ${date[3]}</span> <span class="art-comment"> 
+            <a class="text-link" href="#">${blog.comments.length} comments</a></span> 
+            <a class="text-link" href="#">${blog.likes.length} likes</a></span>
+            </div>
             <div class="art-intro">${blog.content.slice(0, 150)}...</div>
-            <a class="text-link readMore" href="./blogdisplay.html"> Read more &rarr;</a>
+            <a class="text-link readMore" href="./showArticle.html"> Read more &rarr;</a>
         </div>
     </div>        `
     
