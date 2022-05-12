@@ -1,28 +1,36 @@
+
 const jwt = localStorage.getItem("token");
 
-const message_list = document.querySelector('.messages-list');
+const message_list = document.querySelector('.tab');
 
-    fetch('http://localhost:4500/api/v1/messages', {
-        method: 'GET', // or 'PUT'
+    fetch(`${serverURL}/api/v1/messages`, {
+        method: 'GET', 
         headers: {
             'Content-Type': 'application/json',
-            'x-access-token': jwt
+            'jwt': jwt
         },
     })
+    .then(data=> data.json())
+        .then(res => {
+            console.log(res)
+            res.getMessages.map(giveMeMessage => {
+                let date = `${new Date(giveMeMessage.date)}`.split(" ");
 
-    .then(res => {
-        console.log(res)
-        res.data.message.map(giveMeMessage => {
-            message_list.innerHTML += ` <tr>
-            <td>${giveMeMessage.name}</td>
-            <td>${giveMeMessage.email}</td>
-            <td>${giveMeMessage.date}</td>
-            <td>${giveMeMessage.message}</td>
-            <td>delete</td>
-            </tr>
-             `;
+                message_list.innerHTML += ` 
+                <tr>
+                    <td>${giveMeMessage.name}</td>
+                    <td>${giveMeMessage.email}</td>
+                    <td>$${date[2]} ${date[1]} ${date[3]}</td>
+                    <td>${giveMeMessage.message}</td>
+                    <td>delete</td>
+                </tr>
+                `;
+            });
+        }
+        ).catch(err=>{
+            console.log(err);
         });
-    }
-    ).catch(err=>{
-        console.log(err);
-    });
+
+
+
+

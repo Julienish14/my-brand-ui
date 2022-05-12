@@ -88,19 +88,21 @@
 
     <script>
        document.getElementById('newArticle').addEventListener("submit", (e) => {
+        const jwt = localStorage.getItem("token");
+
             e.preventDefault();
                 const title = document.getElementById('title').value;
                 const content = document.getElementById('content').value;
                 const blogImage = document.getElementById('image').value;
-
+                const input = document.querySelector('input[type="file"]');
 
                 var myHeaders = new Headers();
-                myHeaders.append("Cookie", "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJKdWxpZW4gaXNoaW13ZSIsImVtYWlsIjoianVsaXNoMTIzQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyNzEyNjU3NjNmNzY4MDhiOWI0YzA5MiIsImlhdCI6MTY1MjI1MTY5OCwiZXhwIjoxNjUyMzM4MDk4fQ.ykdRR1yA3W43LSZfCVkxHpykbHZiLwNrhQ-BrccQwQA");
-
+                myHeaders.append("jwt", jwt);
+              
                 var formdata = new FormData();
                 formdata.append("title", title);
                 formdata.append("content", content);
-                // formdata.append("blogImage", fileInput.files[0], blogImage);
+                formdata.append("blogImage", input.files[0]);
 
                 var requestOptions = {
                 method: 'POST',

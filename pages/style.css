@@ -326,11 +326,11 @@ footer{
 }
 article{
     width: 70%;
-    margin: auto;
+    margin: 20px auto;
 }
 .article-head{
     width: 35%;
-    margin: auto;
+    margin: 5px auto;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -354,9 +354,6 @@ article{
     background: rgb(6, 6, 216);
     color: white;
     border-radius: 5px;
-}
-article .art-container{
-    
 }
 
 .art-item{
@@ -387,6 +384,9 @@ article .art-container{
     text-decoration: underline;
 }
 
+.articles footer{
+    margin-top: 210px;
+}
 
 /*==============--------**** Blog view ****--------=======*/
 

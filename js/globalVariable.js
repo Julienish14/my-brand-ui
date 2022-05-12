@@ -1,4 +1,4 @@
-let globalURL = "https://my-brand-project.herokuapp.com" ;
+let serverURL = "https://my-brand-project.herokuapp.com" ;
 
 function getCookie(cname) {
     let name = cname + "=";
