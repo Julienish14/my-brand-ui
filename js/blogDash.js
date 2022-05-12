@@ -34,15 +34,21 @@ const article_list = document.querySelector('.tab');
         });
 
         async function deleteArticle(id) {
-            alert('delete blog...');
             try {
-                await axios
-                    .delete(`${global}/api/v1/articles/${id}`);
+                
+                    await fetch(`${serverURL}/api/v1/articles/${id}`, {
+                        method: 'DELETE', 
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'jwt': jwt
+                        },
+                    })
+                alert('delete blog...');
                 location.reload()
             } catch (error) {
               
-                if (error.response.data?.message) {
-                    alert(`${error.response.data.message}`);
+                if (error) {
+                    alert(`${error.message}`);
                 } else {
                     alert(`${error.message}`);
                 }
