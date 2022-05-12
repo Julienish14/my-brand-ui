@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.landing, .about, .blogs, .blog-view, .articles{
+.landing, .about, .blogs, .blog-view{
     background-color: #88786B;
     font-family: "Poppins", sans-serif;
 }
@@ -305,132 +305,88 @@ footer{
 
 }
 
-/*--------==========***** Blog ***********===========----------*/
-
-
-
-
-
-.blogs{
-    display: grid;
-    grid-template-columns: 5% 10% 10% auto 10% 10% 5%;
-    grid-template-rows: 100px 70px 50px;
-    grid-template-areas: 
-    ". logo . . . login ." 
-    ". . bl-list-title bl-list-title bl-list-title . ."
-    ". . . . . blg-side ." 
-    ". . blg-cont blg-cont blg-cont blg-side ." 
-    ". . blg-cont-Two blg-cont-Two blg-cont-Two blg-side ." 
-    ". . blg-cont-Three blg-cont-Three blg-cont-Three blg-side ." 
-    ". . blg-cont-Four blg-cont-Four blg-cont-Four blg-side .";
-}
-.bl-prt{
-    margin: 0px 3%;
-}
-.blogs .logo{
-    grid-area: logo;
-    align-self: flex-end;
-    justify-self: start;
-}
-.blogs .login{
-    grid-area: login;
-    align-self: center;
-    justify-self: end;
-}
-.bl-list-title{
-    grid-area: bl-list-title;
-    display: flex;
-    justify-content: space-between;
-}
-.bl-list-title p{
-    width: 50%;
-    text-align: right;
-}
-.blg-side{
-    grid-area: blg-side;
-    justify-self: self-end;
-}
-.blg-side a{
-    display: block;
-    background-color: black;
-    width: 25px;
-    height: 25px;
-    margin: 10px;
-    text-align: center;
-    border-radius: 50%;
-}
-.blg-side i{
+/*---------=========******* Article *********==========----------*/
+.articles{
+    background: black;
     color: white;
-    font-size: small;
+    /* font-family: "Poppins", sans-serif; */
+    font-family: "Roboto", sans-serif;
+    
 }
-.blg-side .side-line{
-    height: 200px;
-    border-right: 3px black solid;
-    margin-right: 20px;
+.articles aside .socialmedia a{
+    background-color: white;
+    font-family: 'Poppins';
+
 }
- .bl-prt{
-    padding: 20px 20px 0px 20px; 
-    display: grid;
-    grid-template-columns: 20% 60% 15% auto;
-    grid-template-rows: repeat(auto 3);
-    grid-template-areas: "blg-date blg-cont blg-img ."
-    "blg-title blg-cont blg-img blg-readM"
-    ". underline . .";
-} 
-.blg-underline{
-    grid-area: underline;
-    border-bottom: 3px rgb(82, 79, 79) solid;
-    width: 60%;
+.articles aside .socialmedia i{
+    color: black;
+}
+.articles aside .vert-line{
+    border-left: 3px white solid;
+}
+article{
+    width: 70%;
     margin: auto;
-    border-radius: 30%;
 }
-.blg-cont-One{
-    grid-area: blg-cont-One;
+.article-head{
+    width: 35%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
 }
-.blg-cont-Two{
-    grid-area: blg-cont-Two;
+.article-head form{
+    margin: 5px 0px;
 }
-.blg-cont-Three{
-    grid-area: blg-cont-Three;
+
+.article-head input{
+    height: 30px;
+    width: 250px;
+    outline: none;
+    padding: 5px;
+    font-size: 1em;
 }
-.blg-cont-Four{
-    grid-area: blg-cont-Four;
-}
-.blg-date{
-    grid-area: blg-date;
-    align-self: end;
-}
-.blg-title{
-    grid-area: blg-title;
-}
-.blg-cont{
-    grid-area: blg-cont;
-}
-.blg-cont p{
-    text-align: justify;  
-    padding-right: 40px;  
-}
-.blg-img{
-    grid-area: blg-img;
-    align-self: center;
-    justify-self: end;
-}
-.blg-readM{
-    grid-area: blg-readM;
-    align-self: end;
-    border: 1px black solid;
-    padding: 0px 10px;
-    border-radius: 10px;
-}
-.blg-readM a{
-    font-size: smaller;
-    color: wheat;
-}
-.blg-readM:hover{
-    background-color: #0D101B;
+.article-head form button{
+    height: 34px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgb(6, 6, 216);
     color: white;
-    transition: 1s ease-in-out;
+    border-radius: 5px;
 }
+article .art-container{
+    
+}
+
+.art-item{
+    display: flex;
+    margin-bottom: 20px;
+}
+.art-info{
+    margin-left: 15px;
+}
+
+.art-info .art-meta{
+    font-size: small;
+    font-style: italic;
+    color: wheat;   
+}
+.art-info .art-intro{
+    margin-bottom: 5px;
+}
+.art-info div, .art-info a{
+    margin-bottom: 5px;
+}
+.art-info .readMore{
+    font-size: 0.8em;
+}
+.art-info .readMore:hover{
+    color: rgb(117, 117, 182);
+    transition: 2s ease-in-out;
+    text-decoration: underline;
+}
+
 
 /*==============--------**** Blog view ****--------=======*/
 
