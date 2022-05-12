@@ -33,7 +33,7 @@
             <h2 class="art-welcome">Welcome to my blog post page</h2>
             <p class="art-subscribe"> Subscribe to get my latest blog post in your inbox</p>
             <form action="" id="subscribe">
-                <input type="text"  placeholder="Enter Your Email">
+                <input type="text" id="email"  placeholder="Enter Your Email">
                 <button type="submit">Subscribe</button>
             </form>
         </div>
@@ -60,7 +60,32 @@
             <div class="horiz-line"></div>
         </footer>
     </section>
+    <script>
+        document.getElementById('subscribe').addEventListener("submit", (e) => {
+            e.preventDefault();
+                const email = document.getElementById('email').value;
 
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                myHeaders.append("Cookie", "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJKdWxpZW4gaXNoaW13ZSIsImVtYWlsIjoianVsaXNoMTIzQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyNzEyNjU3NjNmNzY4MDhiOWI0YzA5MiIsImlhdCI6MTY1MjM0NDQ2MiwiZXhwIjoxNjUyNDMwODYyfQ.Qcgys9Htf5LA5EQFeXFxKLm_PMXo8FGv0L0sjno8bSw");
+
+                var raw = JSON.stringify({
+                "email": email
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("https://my-brand-project.herokuapp.com/api/v1/subscribe", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result),alert('You have subscribed'))
+                .catch(error => console.log('error', error));
+        });
+    </script>
     <script src="../js/globalVariable.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/articles.js"></script>

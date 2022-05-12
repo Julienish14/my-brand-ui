@@ -447,10 +447,11 @@ footer{
 }
 
 .comment-area{
-    width: 70%;
+    width: 85%;
     margin: 50px auto;
     background: #121213;
     padding: 30px;
+    border-radius: 10px;
 }
 .comment-info{
     margin-bottom: 5px;
