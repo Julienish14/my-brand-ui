@@ -20,7 +20,7 @@ const comments = document.querySelector('.tab');
                     <td>${giveMecomment.commentedBy}</td>
                     <td>${giveMecomment.text}</td>
                     <td>${date[2]} ${date[1]} ${date[3]}</td>
-                    <td>delete</td>
+                    <td><button onClick="deleteComment('${giveMecomment._id}')">Delete</button></td>
                 </tr>
                 `;
             });
@@ -29,6 +29,26 @@ const comments = document.querySelector('.tab');
             console.log(err);
         });
 
-
+        async function deleteComment(id) {
+            try {
+                
+                    await fetch(`${serverURL}/api/v1/articles/comments/all/${id}`, {
+                        method: 'DELETE', 
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'jwt': jwt
+                        },
+                    })
+                alert('Comment deleted...');
+                location.reload()
+            } catch (error) {
+              
+                if (error) {
+                    alert(`${error.message}`);
+                } else {
+                    alert(`${error.message}`);
+                }
+            }
+        };
 
 

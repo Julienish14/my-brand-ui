@@ -20,9 +20,10 @@ const message_list = document.querySelector('.tab');
                 <tr>
                     <td>${giveMeMessage.name}</td>
                     <td>${giveMeMessage.email}</td>
-                    <td>$${date[2]} ${date[1]} ${date[3]}</td>
+                    <td>${date[2]} ${date[1]} ${date[3]}</td>
                     <td>${giveMeMessage.message}</td>
-                    <td>delete</td>
+                    <td><button onClick="deleteMessage('${giveMeMessage._id}')">Delete</button></td>
+                    
                 </tr>
                 `;
             });
@@ -31,6 +32,26 @@ const message_list = document.querySelector('.tab');
             console.log(err);
         });
 
-
+        async function deleteMessage(id) {
+            try {
+                
+                    await fetch(`${serverURL}/api/v1/messages/${id}`, {
+                        method: 'DELETE', 
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'jwt': jwt
+                        },
+                    })
+                alert('Message deleted...');
+                location.reload()
+            } catch (error) {
+              
+                if (error) {
+                    alert(`${error.message}`);
+                } else {
+                    alert(`${error.message}`);
+                }
+            }
+        };
 
 

@@ -1,6 +1,5 @@
 let article = document.querySelector('.art-container');
 const blogs = fetch(`${serverURL}/api/v1/articles`)
-// const blogs = fetch(`http://localhost:4500/api/v1/articles`)
 
     .then(data => data.json());
 

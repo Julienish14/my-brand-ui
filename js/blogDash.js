@@ -15,6 +15,7 @@ const article_list = document.querySelector('.tab');
             console.log(res)
             res.posts.map(giveMeBlog => {
                 let date = `${new Date(giveMeBlog.date)}`.split(" ");
+
                 article_list.innerHTML += ` 
                 <tr>
             <td><img class="blog-image" src="${serverURL}/uploads/${giveMeBlog.blogImage}" alt="image" width="60px" height="50px">
@@ -23,7 +24,7 @@ const article_list = document.querySelector('.tab');
                     <td>${date[2]} ${date[1]} ${date[3]}</td>
                     <td>${giveMeBlog.comments.length}</td>
                     <td>${giveMeBlog.likes.length}</td>
-                    <td> <a href="update.html" ><i class="fa-solid fa-pen-to-square"></i></a> <a href="#" onClick="deleteArticle('${giveMeBlog._id}')"><i class="fa-solid fa-x"></i></a></td>
+                    <td> <a href="update.html" onClick="passBlogTolocal('${giveMeBlog._id}')"><i class="fa-solid fa-pen-to-square"></i></a> <a href="#" onClick="deleteArticle('${giveMeBlog._id}')"><i class="fa-solid fa-x"></i></a></td>
 
                 </tr>
                 `;
@@ -33,6 +34,8 @@ const article_list = document.querySelector('.tab');
             console.log(err);
         });
 
+        //Delete article 
+        
         async function deleteArticle(id) {
             try {
                 
@@ -53,7 +56,45 @@ const article_list = document.querySelector('.tab');
                     alert(`${error.message}`);
                 }
             }
-        }
+        };
     
+        // Update pass data to localstorage
 
+        async function passBlogTolocal(id){
+            // const blogInfoPass = document.querySelector('#update-blog');
+            // const inpuTitle = document.querySelector('input[type="text"]');
+            // const textContent = documet.querySelector('textarea');
+            // const fileImage = document.querySelector('input[type="file"]');
+            fetch(`${serverURL}/api/v1/articles/${id}`, {
+                method: 'GET', 
+                headers: {
+                    'Content-Type': 'application/json',
+                    'jwt': jwt
+                },
+            })
+            .then(data=> data.json())
+                .then(res => {
+                    console.log(res)
+                    res.posts.map(passToPage => {
+                        // let date = `${new Date(passToPage.date)}`.split(" ");
+
+                        
+
+
+                        // inpuTitle.attr('value', function(i, val){
+                        //     return val = `${passToPage.title}`;
+                        // })
+                        // textContent.html(function (value) { 
+                        //     return value = `${passToPage.title}`; 
+                        // });
+                        // inpuTitle.attr('value', input.val(`${passToPage.title}`))
+                        // inpuTitle.attr('value', input.val(`${passToPage.title}`))
+                        // inpuTitle.attr('value', input.val(`${passToPage.title}`))
+
+                    });
+                }
+                ).catch(err=>{
+                    console.log(err);
+                });
+        }
 

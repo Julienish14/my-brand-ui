@@ -179,7 +179,7 @@ input[type="submit"]:hover{
   margin: 30px 100px;
 }
 
-.new-blog form input{
+.new-blog form input[type="text"], .new-blog form .submit-blog{
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   width: 100%;
@@ -190,22 +190,50 @@ input[type="submit"]:hover{
   margin: 5px 0px;
   border-radius: 5px;
 }
+input[type="file"]{
+  color: white;
+  background: rgb(126, 125, 124);
+  width: 25%;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
 .new-blog form textarea{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   background: white;
   width: 100%;
   color: black;
   outline: none;
-  font-size: 1em;
-
+  font-size: 2em;
+  padding-left: 15px;
 }
 .new-blog form .submit-blog{
-  width: 200px;
+  width: 25%;
 }
 
 .new-blog form label{
   color: white;
   font-size: 1.5em;
   font-weight: bold;
+}
+table{
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+}
+table td{
+  color: wheat;
+}
+
+table button{
+  background: red;
+  color: black;
+  font-size: em;
+  font-weight: bolder;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
 }
