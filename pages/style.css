@@ -37,18 +37,29 @@ a{
     margin: 20px 0px -5% 7%;
     line-height: 90px;
 }
+.anime-me a{
+    font-weight: 900; 
+    background: linear-gradient(to right, black 50%, rgb(2, 2, 46) 50%, rgb(187, 201, 187));
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.5s ease-out;
+}
+.anime-me:hover a{
+    background-position: -100%;
+}
 .navigator a{
     font-family: 'Redressed', cursive; font-weight: bold;
     font-size: 10rem;
     color: black;
 }
-.navigator a:hover{
-    color: #070725;
-    transition: 2s ease-in-out;
+.navigator .navOne{
+    width: 30%;
 }
 
 .navigator .navTwo{
     margin-left: 10%;
+    width: 27%;    
 }
 .navigator .navThree{
     margin-left: 20%;
@@ -62,9 +73,11 @@ a{
     font-family: 'Redressed', cursive; font-weight: bold;
     font-size: 3.8em;
     font-weight: bold;
-    text-decoration: underline;
     margin-left: 10px;
 }
+
+
+
 aside{
     position: absolute;
     top: 100px; 
@@ -97,20 +110,7 @@ aside{
     border-left: 3px solid black;
 }
 
-.intro{
-    margin-top: 10px; 
-    margin-left: 73%;
-}
-.intro h4{
-    font-family: 'Roboto Slab', serif;
-    font-size: 1em;
-    font-weight: regular; 
-}
-.intro p{
-    font-family: 'Roboto Mono', monospace;
-    font-weight: lighter;
-    font-size: 0.7em;
-}
+
 footer{
     display: flex;
     font-size: 0.5em;
@@ -152,7 +152,7 @@ footer{
   }
   .animated-title > div div {
     font-size: 2vmin;
-    padding: 0.5vmin 0;
+    padding: 1vmin 0;
     position: absolute;
   }
   .animated-title > div div span {
@@ -270,7 +270,6 @@ footer{
     font-size: 1em;
 }
 .icon-social{
-   
     margin-top: 10px;
 }
 .icon-social a{
@@ -280,6 +279,9 @@ footer{
     text-decoration: none;
     border-radius: 50%;
     text-align: center;
+}
+.icon-social a:hover{
+    background-color: #88786B;
 }
 .icon-social i{
     color: black;
@@ -704,11 +706,14 @@ footer{
 .works aside .socialmedia a{
     background-color: white;
     font-family: 'Poppins';
-
+}
+.works aside .socialmedia a:hover{
+    background-color: #88786B;
 }
 .works aside .socialmedia i{
     color: black;
 }
+
 .works aside .vert-line{
     border-left: 3px white solid;
 }
@@ -1121,7 +1126,21 @@ footer{
     cursor: pointer;
     font-weight: bold;
 }
+
+/* ======================= -------------------************** MEDIA **************---------------===================== */
+
+ 
 @media(max-width: 1200px){
+    /* ===============------------ landing page -----------============ */
+    .animated-title{
+        position: absolute;
+        margin-top: 90px;
+        left: 87%;
+    }
+    .landing footer{
+        margin-top: 250px;
+    }
+
     /* =====================-----------Works -----------==================== */
     .expl-works{
         margin-top: 100px;
@@ -1178,28 +1197,27 @@ footer{
     }
         
     .intro{
-        margin: -70px auto -20px auto;
-        padding: 50px;
+        position: absolute;
+        top: 600px;
+        right: 50%;
+        
     }
-    .intro h4{
-        font-size: 1.6em;
-        text-align: center;
-    }
-    .intro p{
-        font-size: 0.9em;
-        text-align: center;
-    }
-
+ 
     .landing aside{
         position: relative;
-        top: 220px;
+        top: 230px;
         margin: auto;
+
     }
     .landing aside .socialmedia a{
         margin: auto 5px;
         display: inline-block;
         width: 60px;
-        height: 60px;
+        height: 60px;  
+    }
+    .landing aside .socialmedia a:hover{
+        background: white;
+        color: black;
         
     }
     .landing aside .socialmedia i{
@@ -1207,7 +1225,7 @@ footer{
         margin-top: 15px;
     }
     footer{
-        margin: 120px auto 50px;
+        margin: 250px auto 50px;
     }
     .landing .horiz-line{
         display: none;
@@ -1564,6 +1582,11 @@ footer{
     }
 
 }
-
+@media(max-width: 650px){
+    .animated-title{
+        height: 230px;
+        width: 240px;
+    }
+}
 
 
