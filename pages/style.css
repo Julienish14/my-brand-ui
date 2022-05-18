@@ -134,7 +134,7 @@ footer{
     100% { transform: translate3d(0, 0, 0); }
   }
   .animated-title {
-    color: #222;
+    color: black;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     height: 33vmin;
@@ -148,7 +148,7 @@ footer{
     height: 50%;
     overflow: hidden;
     position: absolute;
-    width: 100%;
+    width: 90%;
   }
   .animated-title > div div {
     font-size: 2vmin;
