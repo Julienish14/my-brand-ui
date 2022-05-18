@@ -82,7 +82,9 @@
 
                 fetch("https://my-brand-project.herokuapp.com/api/v1/subscribe", requestOptions)
                 .then(response => response.text())
-                .then(result => console.log(result),alert('You have subscribed'))
+                .then(result => console.log(result),alert('Thank You for your subscription'),
+                location.reload()
+                )
                 .catch(error => console.log('error', error));
         });
     </script>
