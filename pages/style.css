@@ -21,7 +21,7 @@
     justify-content: flex-start;
 } 
 
-.landing header, .contacts header, .about header, .articles header, .showArt header{
+.landing header, .contacts header, .about header, .articles header, .showArt header, .user-login header{
     position: relative;
     top: 0;
     width: 100%;
@@ -114,7 +114,7 @@ aside{
 footer{
     display: flex;
     font-size: 0.5em;
-    margin-top: 0px;
+    margin-top: 130px;
     margin-left: 5%;
 
 }
@@ -123,7 +123,70 @@ footer{
     border-bottom: 3px solid black;
     margin: auto;
 }
-
+/*animated text*/
+@keyframes showTopText {
+    0% { transform: translate3d(0, 100%, 0); }
+    40%, 60% { transform: translate3d(0, 50%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+  @keyframes showBottomText {
+    0% { transform: translate3d(0, -100%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+  .animated-title {
+    color: #222;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    height: 33vmin;
+    left: 83%;
+    position: absolute;
+    top: 83%;
+    transform: translate(-50%, -50%);
+    width: 40vmin;
+  }
+  .animated-title > div {
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+  .animated-title > div div {
+    font-size: 2vmin;
+    padding: 0.5vmin 0;
+    position: absolute;
+  }
+  .animated-title > div div span {
+    display: block;
+  }
+  .animated-title > div.text-top {
+    border-bottom: 1vmin solid #000;
+    top: 0;
+  }
+  .animated-title > div.text-top div {
+    animation: showTopText 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    transform: translate(0, 100%);
+  }
+  .animated-title > div.text-top div span:first-child {
+    color: white;
+  }
+  .animated-title > div.text-bottom {
+    bottom: 0;
+  }
+  .animated-title > div.text-bottom div {
+    animation: showBottomText 0.5s;
+    animation-delay: 1.75s;
+    animation-fill-mode: forwards;
+    top: 0;
+    transform: translate(0, -100%);
+  }
+  .animated-title #ju-name{
+      font-weight: bolder;
+      font-size: 3vmin;
+      height: 63px;
+  }
 /* ---------=============**********Contactpage************===========-------- --- */
 
 .contacts header{
@@ -955,7 +1018,7 @@ footer{
 }
 .user-login .login-title{
     width: 100%;
-    margin-top: 150px;
+    margin-top: 40px;
     font-family: 'courier New';
     font-size: 1.2em;
     text-align: center;
@@ -964,7 +1027,7 @@ footer{
 .user-login .login-cont{
     width: 70%;
     height: 40vh;
-    margin: 10px auto 180px auto;
+    margin: 10px auto 160px auto;
     display: flex;
     justify-content: space-between;
     padding: 100px 10% 50px 10%;
