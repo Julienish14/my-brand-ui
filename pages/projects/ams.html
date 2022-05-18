@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Julish asset management Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image" href="img/j.jpg" >
+
+    <style>
+        
+    
+body {
+	margin:0;
+	font-family: 'Roboto Condensed', sans-serif;
+	background: rgb(1, 17, 17);
+}
+
+ 
+h1 {
+	
+		   color:#fff;
+		   font-weight:700;
+		   margin-top:70px;	 
+		   text-align:center;
+		   text-transform:uppercase;
+		   letter-spacing:4px;
+		   line-height:23px;
+	   }
+	   
+	   /* --- Start progress bar --- */
+	   img{margin: 10px 20px 10px 0px;border-radius: 5px;}
+	   
+	   .process-wrapper {
+		   margin:auto;
+		   max-width:1080px;
+	   }
+	   
+	   #progress-bar-container {
+		   position:relative;
+		   width:90%;
+		   margin:auto;
+		   height:100px;
+		   margin-top:45px;
+	   }
+	   
+	   #progress-bar-container ul {
+		   padding:0;
+		   margin:0;
+		   padding-top:15px;
+		   z-index:9999;
+		   position:absolute;
+		   width:100%;
+		   margin-top:-40px
+	   }
+	   
+	   #progress-bar-container li:before {
+		   content:" ";
+		   display:block;
+		   margin:auto;
+		   width:30px;
+		   height:30px;
+		   border-radius:50%;
+		   border:solid 2px #aaa;
+		   transition:all ease 0.3s;
+			
+	   }
+	   
+	   #progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+		   border:solid 2px #fff;
+				   
+		   background: linear-gradient(to right, #0a0d3d 0%,#fff 100%); 
+	   }
+	   
+	   #progress-bar-container li {
+		   list-style:none;
+		   float:left;
+		   width:20%;
+		   text-align:center;
+		   color:#aaa;
+		   text-transform:uppercase;
+		   font-size:11px;
+		   cursor:pointer;
+		   font-weight:700;
+		   transition:all ease 0.2s;
+		   vertical-align:bottom;
+		   height:60px;
+		   position:relative;
+	   }
+	   
+	   #progress-bar-container li .step-inner {
+		   position:absolute;
+		   width:100%;
+		   bottom:0;
+		   font-size: 14px;
+	   }
+	   
+	   #progress-bar-container li.active, #progress-bar-container li:hover {
+		   color:#444;
+	   }
+	   
+	   #progress-bar-container li:after {
+		   content:" ";
+		   display:block;
+		   width:6px;
+		   height:6px;
+		   background:#777;
+		   margin:auto;
+		   border:solid 7px #fff;
+		   border-radius:50%;
+		   margin-top:40px;
+		   box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+		   transition:all ease 0.2s;
+			
+	   }
+	   
+	   #progress-bar-container li:hover:after {
+		   background:#555;
+	   }
+	   
+	   #progress-bar-container li.active:after {
+		   background:#207893;
+	   }
+	   
+	   #progress-bar-container #line {
+		   width:80%;
+		   margin:auto;
+		   background: #eee;
+		   height:6px;
+		   position:absolute;
+		   left:10%;
+		   top:57px;
+		   z-index:1;
+		   border-radius:50px;
+		   transition:all ease 0.9s;
+	   }
+	   
+	   #progress-bar-container #line-progress {
+		   content:" ";
+		   width:3%;
+		   height:100%;
+		   background: #207893;	 
+		   background: linear-gradient(to right, #207893 0%,#2ea3b7 100%); 
+		   position:absolute;
+		   z-index:2;
+		   border-radius:50px;
+		   transition:all ease 0.9s;
+	   }
+	   
+	   #progress-content-section {
+		   width:90%;
+		   margin: 40px;
+		   background: #f3f3f3;
+		   border-radius: 4px;
+
+	   }
+	   
+	   #progress-content-section .section-content {
+		   padding:10px 40px;
+		   font-family: 'Times New Roman', Times, serif;
+	   
+	   }
+	   
+	   #progress-content-section .section-content h2 {
+		   font-size:17px;
+		   text-transform:uppercase;
+		   color:#333;
+		   letter-spacing:1px;
+		   text-align: center;
+	   }
+	   
+	   #progress-content-section .section-content p {
+		   font-size:16px;
+		   line-height:1.8em;
+		   color:#777;
+	   }
+	   #progress-content-section .section-content ol{
+		   color: #777;
+		   font-size:16px;
+		   line-height:1.8em;
+	   }
+	   #progress-content-section .section-content {
+		   display:none;
+		   animation: FadeInUp 700ms ease 1;
+		   animation-fill-mode:forwards;
+		   transform:translateY(15px);
+		   opacity:0;
+	   }
+	   
+	   #progress-content-section .section-content.active {
+		   display:block;
+	   }
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+ 
+    </style>
+</head>
+<body>
+ 
+
+<h1>ASSET management SYSTEM</h1>
+<br> 
+<div class="process-wrapper">
+<div id="progress-bar-container">
+	<ul>
+		<li class="step step01 active"><div class="step-inner">WHAT?</div></li>
+		<li class="step step02"><div class="step-inner">WHY?</div></li>
+		<li class="step step03"><div class="step-inner">HOW?</div></li>
+		<li class="step step04"><div class="step-inner">HOW?</div></li>
+		<li class="step step05"><div class="step-inner">CONCLUSION</div></li>
+	</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>WHAT IS <abbr title="Asset Management System">AMS</abbr>?</h2>
+		<p>What is an asset management system? In short, it’s any process a company or organization uses to keep track of the equipment and inventory 
+			vital to day-to-day operation of their businesses. Exactly how those assets are managed, though, is highly variable. In large part, 
+			it depends on whether the organization in question is aware of the assets they own,<br>
+		<img src="img/ams/ams.PNG" align="right" width="300" height="150" alt="carRental pic" >
+		 and whether they’re aware of the potential ramifications of an inefficient tracking system.
+			An accurate, real-time asset tracking system is more important than a lot of companies realize.
+		Unfortunately, companies who don’t have a handle on their asset management typically lose considerable amounts of money and time
+		 before they begin to seek a better solution. Thanks to the cloud and mobile technology, there is indeed a better way to track your assets.
+		  Asset Panda offers our clients a platform that’s extremely intuitive and easy to use. We’ve invested hundreds of hours to research and
+		   develop a robust set of features that empower clients to manage their assets exactly how they want – and at a fraction of the cost of our competitors
+			
+	</div>
+	
+	<div class="section-content strategy">
+		<h2>WHY <abbr title="Asset Management System">AMS</abbr>?</h2>
+		<p>Asset management allows the organization to keep track of all their assets. It can tell where the assets are located, how they are used, 
+			and when changes were made to them. The data from the asset management solution can ensure that asset recovery will lead to better returns.
+
+			<img src="img/ams/ams-1.PNG" align="right" width="300" height="170" alt="">
+			Manage assets from different locations in an accurate and effective manner. The company can easily create an inventory report that might be required by some insurers or lease financiers.
+<br>Asset management can also be used to make sure that the amortization rates are accurate. Regular assessments of the assets will ensure that the financial statements of the business are accurate.
+Asset recovery is automatically reflected in an asset management system. Once assets are scrapped or sold, the said assets will be removed from the records and books of the business. Related assets, 
+such as consumables and spare parts, are written off or sold to free storage space.<br>
+									
+		</p>
+	</div>
+	
+	<div class="section-content creative">
+		<h2>HOW THE SYSTEM WORK?</h2>
+		<img src="img/ams/ams-2.PNG" align="left" alt="" width="300" height="150">
+		<p>Asset management software is a centralized system that allows your organization to track important details about each asset in real time. This decreases administrative costs, 
+			improves service and gives your organization greater visibility into asset utilization, costs and maintenance. </p>
+		<img src="img/ams/ams-3.PNG" align="right" alt="" width="250" height="150"> 
+		<p>After that user can enter to the pages contains available car in system where s/he can choose the car to rent in many cars, automaticaly
+			after the admin confirmation of the car rent this car removed from available list to unvailable car list. customer got the receipt contain 
+		the date of car must be returned so, when the car is returned to the company Admin can update the car information from unvailable car list to available
+	car inorder to be used in renting again and again.  </p>
+		
+
+	</div>
+	
+	<div class="section-content production">
+		<h2>HOW THE SYSTEM WORK? Part2</h2>
+		<img src="img/ams/ams-4.PNG" align="left" alt="" width="300" height="150">
+		<p>Asset management software is a centralized system that allows your organization to track important details about each asset in real time. This decreases administrative costs, 
+			improves service and gives your organization greater visibility into asset utilization, costs and maintenance. 
+		<br> Asset management software is a dedicated application which is used to record and track an asset throughout its life cycle, from procurement to disposal. It provides an organization 
+		Asset management software is a dedicated application which is used to record and track an asset throughout its life cycle, from procurement to disposal. It provides an organization with information like where certain assets are located, who is using them, how they are being utilized and details about the asset. </p>
+		
+	</div>
+	
+	<div class="section-content analysis">
+		<h2>CONCLUSION.</h2>
+		<p>Asset management software makes you more aware of what assets you have and helps you avoid potential risks.
+			The system optimizes the life cycle of your assets from the time you procure them through usage, decommissioning, to its disposal.
+			Whenever you recognize your need for better asset tracking, you can put our plans in place to avoid any unexpected difficulty and give your organization an opportunity to excel..</p>
+		<img src="img/ams/ams-5.PNG" align="left" alt="" width="300" height="150">
+		<p>Fixed Asset Management gives you space to reduce expenses through loss prevention and improved equipment maintenance. It reduces new and unnecessary purchases of assets and can calculate taxes more accurately and efficiently, based on its depreciation schedules.Fixed Asset Management gives you space to reduce expenses through loss prevention and improved equipment maintenance. It reduces new and unnecessary purchases of assets and can calculate taxes more accurately and efficiently, based on its depreciation schedules. </p>
+	
+	</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+ 
+    </script>
+</body>
+</html>

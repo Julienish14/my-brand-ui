@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Julish Car Rental Sytem Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image" href="img/j.jpg" >
+
+    <style>
+        
+    
+body {
+	margin:0;
+	font-family: 'Roboto Condensed', sans-serif;
+	background: rgb(1, 1, 17);
+}
+
+ 
+h1 {
+	 	  
+	color:#fff;
+	font-weight:700;
+	margin-top:70px;	 
+	text-align:center;
+	text-transform:uppercase;
+	letter-spacing:4px;
+	line-height:23px;
+}
+
+/* --- Start progress bar --- */
+img{margin: 10px 20px 0px 0px;
+border-radius: 5px;}
+
+.process-wrapper {
+	margin:auto;
+	max-width:1080px;
+}
+
+#progress-bar-container {
+	position:relative;
+	width:90%;
+	margin:auto;
+	height:100px;
+	margin-top:45px;
+}
+
+#progress-bar-container ul {
+	padding:0;
+	margin:0;
+	padding-top:15px;
+	z-index:9999;
+	position:absolute;
+	width:100%;
+	margin-top:-40px
+}
+
+#progress-bar-container li:before {
+	content:" ";
+	display:block;
+	margin:auto;
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:solid 2px #aaa;
+	transition:all ease 0.3s;
+     
+}
+
+#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+	border:solid 2px #fff;
+       	 
+	background: linear-gradient(to right, #043120 0%,rgb(172, 155, 199) 100%); 
+}
+
+#progress-bar-container li {
+	list-style:none;
+	float:left;
+	width:20%;
+	text-align:center;
+	color:#aaa;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	font-weight:700;
+	transition:all ease 0.2s;
+	vertical-align:bottom;
+	height:60px;
+	position:relative;
+}
+
+#progress-bar-container li .step-inner {
+	position:absolute;
+	width:100%;
+	bottom:0;
+    font-size: 14px;
+}
+
+#progress-bar-container li.active, #progress-bar-container li:hover {
+	color:#444;
+}
+
+#progress-bar-container li:after {
+	content:" ";
+	display:block;
+	width:6px;
+	height:6px;
+	background:#777;
+	margin:auto;
+	border:solid 7px #fff;
+	border-radius:50%;
+	margin-top:40px;
+	box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+	transition:all ease 0.2s;
+     
+}
+
+#progress-bar-container li:hover:after {
+	background:#555;
+}
+
+#progress-bar-container li.active:after {
+	background:#207893;
+}
+
+#progress-bar-container #line {
+	width:80%;
+	margin:auto;
+	background: #eee;
+	height:6px;
+	position:absolute;
+	left:10%;
+	top:57px;
+	z-index:1;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-bar-container #line-progress {
+	content:" ";
+	width:3%;
+	height:100%;
+	background: #207893;	 
+	background: linear-gradient(to right, #207893 0%,#2ea3b7 100%); 
+	position:absolute;
+	z-index:2;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-content-section {
+	width:90%;
+	margin: auto;
+	background: #f3f3f3;
+	border-radius: 4px;
+}
+
+#progress-content-section .section-content {
+	padding:10px 40px;
+	font-family: 'Times New Roman', Times, serif;
+	margin-bottom: 40px;
+
+}
+
+#progress-content-section .section-content h2 {
+	font-size:17px;
+	text-transform:uppercase;
+	color:#333;
+	letter-spacing:1px;
+	text-align: center;
+}
+
+#progress-content-section .section-content p {
+	font-size:16px;
+	line-height:1.8em;
+	color:#777;
+}
+#progress-content-section .section-content ol{
+	color: #777;
+	font-size:16px;
+	line-height:1.8em;
+}
+#progress-content-section .section-content {
+	display:none;
+	animation: FadeInUp 700ms ease 1;
+	animation-fill-mode:forwards;
+	transform:translateY(15px);
+	opacity:0;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+ 
+    </style>
+</head>
+<body>
+ 
+
+<h1>CAR RENTAL SYSTEM</h1>
+<br> 
+<div class="process-wrapper">
+<div id="progress-bar-container">
+	<ul>
+		<li class="step step01 active"><div class="step-inner">WHAT?</div></li>
+		<li class="step step02"><div class="step-inner">WHY?</div></li>
+		<li class="step step03"><div class="step-inner">HOW?</div></li>
+		<li class="step step04"><div class="step-inner">HOW?</div></li>
+		<li class="step step05"><div class="step-inner">CONCLUSION</div></li>
+	</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>WHAT IS <abbr title="Car Rental System">CRS</abbr>?</h2>
+		<p>This car rental system is desktop application for a company that rents out cars. This system enables the company to make their services more easly to 
+			to control their cars and also keep records about their services, The project is designed to help people utilize transport effectively. 
+			In recent times cars have become most convenient modes of transportation. Our Car rental system helps in making this an easier, hassle-free and enjoyable experience to acquire and use a car as per ones needs.<br>
+		<img src="img/car/item-1.jpg" align="left" width="300" height="150" alt="carRental pic" >
+			A person can book a car specifically for his travel time, co-travelers and the nature of travel. The rental system traverses from
+			 designing a database to understanding business concept and above all to make this an easy to adapt system for various travelling 
+			 needs. <br> This picture shows the landing page of the system "Welcome page!" this project is designed in Visual Basic.Net on front-end 
+			 and for Back-end it use SQL sever management 2014. 
+			
+	</div>
+	
+	<div class="section-content strategy">
+		<h2>WHY <abbr title="Car Rental System">CRS</abbr>?</h2>
+		<p> Car Rental System has undetailed vital to both part company and customer in nowadays it one of the growing part in economy. 
+			Car renting and sharing are often seen as a better, smarter and environment-friendly way of car ownership. 
+			As more and more people gives up car ownership, 
+			most of existing vehicular traffic and transportation challenges such as traffic congestion, pollution levels etc will plummet. 
+
+			<img src="img/car/car-3.PNG" align="right" width="300" height="170" alt="">
+			<strong>The scope of this project is as follows:<br> </strong>
+					
+					1.To keep detail records of both the cars and the customers, the duration they rent car as well as the type of car they rent.<br>
+					2.The system will be mainly design for small a company that renders it car rental services to customers.<br>
+					3.The system will have the ability to generate and print invoice for each successful transaction.<br>
+									
+		</p>
+	</div>
+	
+	<div class="section-content creative">
+		<h2>HOW THE SYSTEM WORK?</h2>
+		<img src="img/car/car-2.PNG" align="left" alt="" width="300" height="150">
+		<p>First this Car Rental System has Two levels of access: administration and customer
+		User has to be registed to use the system first of all, if it's the first time s/he must create the account and get the code Number, 
+		credentials used to registe can be used to login on the system where will be directed in your account. Here user can update his/her information
+		like credential username and password etc... even the profile picture can be updated </p>
+		<img src="img/car/car-10.PNG" align="right" alt="" width="250" height="150"> 
+		<p>After that user can enter to the pages contains available car in system where s/he can choose the car to rent in many cars, automaticaly
+			after the admin confirmation of the car rent this car removed from available list to unvailable car list. customer got the receipt contain 
+		the date of car must be returned so, when the car is returned to the company Admin can update the car information from unvailable car list to available
+	car inorder to be used in renting again and again.  </p>
+		<img src="img/car/car-11.PNG" align="left" alt="" width="350" height="200">
+		<p>user after choosing car s/he confirm it by pressing the big button in upside of the page "BooK Now!" as it showned on the images the following
+			page after car confirmation is where customer choose to rent car with driver or NOT here also s/he enter the number of days 
+		of carenting car where automatically the screen shows you the date to return a car.
+	<br> then after pressing "Confirm" button user must wait a few second or s/he can communicate the admin to allow or denier the request 
+if the admin allows user to rent the car this current page it change where it asks user to Print the invoice receipt. which contains all information
+on the process of this renting like customer fullnames, email, telephone number, date car is rented and date to return, the price per day and total price
+and so other important information needed for both side company and custormer. </p>
+
+	</div>
+	
+	<div class="section-content production">
+		<h2>HOW THE SYSTEM WORK? Part2</h2>
+		<img src="img/car/car-4.PNG" align="left" alt="" width="300" height="150">
+		<p>First this Car Rental System has Two levels of access: administration and customer
+		User has to be registed to use the system first of all, if it's the first time s/he must create the account and get the code Number, 
+		credentials used to registe can be used to login on the system where will be directed in your account. Here user can update his/her information
+		like credential username and password etc... even the profile picture can be updated </p>
+		<img src="img/car/car-5.PNG" align="right" alt="" width="250" height="150"> 
+		<p>After that user can enter to the pages contains available car in system where s/he can choose the car to rent in many cars, automaticaly
+			after the admin confirmation of the car rent this car removed from available list to unvailable car list. customer got the receipt contain 
+		the date of car must be returned so, when the car is returned to the company Admin can update the car information from unvailable car list to available
+	car inorder to be used in renting again and again.  </p>
+		<img src="img/car/car-6.PNG" align="left" alt="" width="350" height="200">
+		<p>user after choosing car s/he confirm it by pressing the big button in upside of the page "BooK Now!" as it showned on the images the following
+			page after car confirmation is where customer choose to rent car with driver or NOT here also s/he enter the number of days 
+		of carenting car where automatically the screen shows you the date to return a car.
+	<br> then after pressing "Confirm" button user must wait a few second or s/he can communicate the admin to allow or denier the request 
+if the admin allows user to rent the car this current page it change where it asks user to Print the invoice receipt. which contains all information
+on the process of this renting like customer fullnames, email, telephone number, date car is rented and date to return, the price per day and total price
+and so other important information needed for both side company and custormer. </p>
+	</div>
+	
+	<div class="section-content analysis">
+		<h2>CONCLUSION.</h2>
+		<p>Based on the research done, some car rental companies still use desktop application for their car rental services and thus making 
+			it to be limited to so many important feature that are not available unlike in the web based application where there are so many 
+			feature available. Also some upcoming companies do not only make use of these desktop applications, 
+			but also make use of phone call reservation, which is still lacking so many features that are needed for this type of system.</p>
+		<img src="img/car/car-7.PNG" align="left" alt="" width="300" height="150">
+		<p>First this Car Rental System has Two levels of access: administration and customer
+		User has to be registed to use the system first of all, if it's the first time s/he must create the account and get the code Number, 
+		credentials used to registe can be used to login on the system where will be directed in your account. Here user can update his/her information
+		like credential username and password etc... even the profile picture can be updated </p>
+		<img src="img/car/car-8.PNG" align="right" alt="" width="250" height="150"> 
+		<p>After that user can enter to the pages contains available car in system where s/he can choose the car to rent in many cars, automaticaly
+			after the admin confirmation of the car rent this car removed from available list to unvailable car list. customer got the receipt contain 
+		the date of car must be returned so, when the car is returned to the company Admin can update the car information from unvailable car list to available
+	car inorder to be used in renting again and again.  </p>
+		<img src="img/car/car-12.PNG" align="left" alt="" width="350" height="200">
+		<p>user after choosing car s/he confirm it by pressing the big button in upside of the page "BooK Now!" as it showned on the images the following
+			page after car confirmation is where customer choose to rent car with driver or NOT here also s/he enter the number of days 
+		of carenting car where automatically the screen shows you the date to return a car.
+	<br> then after pressing "Confirm" button user must wait a few second or s/he can communicate the admin to allow or denier the request 
+if the admin allows user to rent the car this current page it change where it asks user to Print the invoice receipt. which contains all information
+on the process of this renting like customer fullnames, email, telephone number, date car is rented and date to return, the price per day and total price
+and so other important information needed for both side company and custormer. </p>
+	</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+ 
+    </script>
+</body>
+</html>
