@@ -33,6 +33,6 @@ commentsForm.addEventListener('submit', async (e) => {
           )
           .catch(error => 
             console.log('error', error),  
-              location.assign('../pages/user-login.html')
+              // location.assign('../pages/user-login.html')
           );
 })
