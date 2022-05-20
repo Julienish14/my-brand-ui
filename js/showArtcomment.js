@@ -25,6 +25,9 @@ commentsForm.addEventListener('submit', async (e) => {
         
         fetch(`${serverURL}/api/v1/articles/${blog_id}/comment`, requestOptions)
           .then(response => response.text())
-          .then(result => console.log(result))
+          .then(result => console.log(result),  
+            alert('Thank You for your comment...'),
+            location.reload()
+          )
           .catch(error => console.log('error', error));
 })

@@ -394,7 +394,7 @@ footer{
     margin: 20px auto;
 }
 .article-head{
-    width: 35%;
+    width: 100%;
     margin: 5px auto;
     text-align: center;
     margin-bottom: 30px;
@@ -448,7 +448,9 @@ footer{
     transition: 2s ease-in-out;
     text-decoration: underline;
 }
-
+.art-info .art-comment a{
+    margin-left: 10px;
+}
 .articles footer{
     margin-top: 210px;
 }
@@ -477,20 +479,22 @@ footer{
     display: flex;
     justify-content: space-between;
 }
-
 .comment-part{
-    margin:50px 0px;
+    margin: 70px 0px;
 }
 .comment-part form textarea{
-    width: 50%;
+    resize: none;
+    width: 100%;
     background: whitesmoke;
     outline: none;
     color: black;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
+    margin-top: 10px;
 }
 .comment-part form button{
-    width: 100px;
+    width: 70%;
+    margin-left: 15%;
     outline: none;
     background-color: rgb(49, 49, 150);
     color: black;
@@ -498,8 +502,8 @@ footer{
     font-weight: bold;
     height: 35px;
     border-radius: 10px;
-    margin-top: -10px;
     cursor: pointer;
+    margin-top: -10px;
 }
 .comment-part form button:hover{
     background-color: rgb(10, 10, 73);
@@ -510,13 +514,21 @@ footer{
     margin: 20px 0px;
     text-align: justify;
 }
-
+.showArt-cont a{
+    margin: 10px 10px;
+    color: wheat;
+    font-size: smaller;
+}
 .comment-area{
     width: 85%;
     margin: 50px auto;
     background: #121213;
     padding: 30px;
     border-radius: 10px;
+}
+.comment-area h4{
+    margin-bottom: 20px; 
+    text-decoration: underline;
 }
 .comment-info{
     margin-bottom: 5px;
@@ -1145,36 +1157,7 @@ footer{
     .expl-works{
         margin-top: 100px;
     }
-    .blogs{
-        grid-template-columns: 10% 10% 10% auto 10% 10% 10%;
-        grid-template-rows: 100px 70px 50px;
-        grid-template-areas: 
-        ". logo . . . login ." 
-        ". bl-list-title bl-list-title bl-list-title bl-list-title bl-list-title ."
-        ". . . . . . blg-side" 
-        ". blg-cont-One blg-cont-One blg-cont-One blg-cont-One . blg-side" 
-        ". blg-cont-Two blg-cont-Two blg-cont-Two blg-cont-Two . blg-side" 
-        ". blg-cont-Three blg-cont-Three blg-cont-Three blg-cont-Three . blg-side" 
-        ". blg-cont-Four blg-cont-Four blg-cont-Four blg-cont-Four . blg-side";
-    }
-    .blg-cont{
-        font-size: 1.2em;
-    }
-    .blg-side{
-        justify-self: center;
-    }
-
-     /* -------------========== Blog Views ==============------------- */
-     .blog-view{
-        grid-template-columns: 3% 5% 50% auto 5% 3%;
-        grid-template-rows: 7% 7% auto auto 5% 20%;
-        grid-template-areas: ". logoB . . loginB ."
-        ". . blgV-title blgV-title blgV-side ."
-        ". blg-article blg-article blg-view-side blgV-side ."
-        ". blg-article blg-article blg-article-cont blg-Vside ."
-        ". . blg-like . . ."
-        ". . blg-comment . . .";
-    }
+   
 
 }
 @media (max-width: 800px){
@@ -1279,41 +1262,7 @@ footer{
     }
     
     /* -------------========= Blogs ===========----------- */
-    .blogs{
-        grid-template-columns: 5% 10% 10% auto 10% 10% 5%;
-        grid-template-rows: 100px 70px 50px;
-        grid-template-areas:
-            ". logo . . . login ."
-            ". . bl-list-title bl-list-title bl-list-title . ."
-            ". . . . . blg-side ."
-            ". blg-cont-One blg-cont-One blg-cont-One blg-cont-One blg-side ."
-            ". blg-cont-Two blg-cont-Two blg-cont-Two blg-cont-Two blg-side ."
-            ". blg-cont-Three blg-cont-Three blg-cont-Three blg-cont-Three blg-side ."
-            ". blg-cont-Four blg-cont-Four blg-cont-Four blg-cont-Four blg-side .";
-    }
-    /* ---------------========= Blog View ============------------ */
-    .blog-view{
-        grid-template-columns: 3% 10% 50% auto 10% 3%;
-        grid-template-rows: 5% 5% auto auto 5% 20%;
-        grid-template-areas: ". logoB . . loginB ."
-        ". . blgV-title blgV-title blgV-title ."
-        ". . blg-article blg-view-side blg-view-side ."
-        ". . blg-article blg-article-cont blg-article-cont ."
-        ". . blg-like . . ."
-        ". . blg-comment blg-comment . .";
-    }
-    .blgV-side{
-        display: none;
-    }
-    .logoB{
-        display: none;
-    }
-    .blg-article{
-        padding: 0px 20px 0px 0px;
-    }
-    .blg-article-cont, .blg-view-side{
-        padding-right: 20px;
-    }
+   
 
     /* ------------------============= User login with.. ===========---------- */
     .user-login .login-cont{
@@ -1353,84 +1302,41 @@ footer{
   
 }
 @media(max-width: 700px){
-    .blogs{
-        grid-template-columns: 3% auto 10% 3%;
-        grid-template-rows: 80px 70px 50px;
-        grid-template-areas: 
-        ". logo login ." 
-        ". bl-list-title bl-list-title ."
-        ". . . ." 
-        ". blg-cont-One  blg-cont-One blg-cont-One" 
-        ". blg-cont-Two blg-cont-Two blg-cont-Two" 
-        ". blg-cont-Three blg-cont-Three blg-cont-Three" 
-        ". blg-cont-Four blg-cont-Four blg-cont-Four";
-        margin: 0px 20px;
-    }
-    .blogs .logo{
-        justify-self: start;
-    }
-    .blg-side{
-        display: none;
-    }
-    .blg-img{
-        width: 100%;
-        height: 50%;
-        margin-right: -30px;
-    }
-    .bl-prt{
-        margin: 0; 
-        padding: 0;
-        grid-template-columns: 30% auto 20%;
-        grid-template-rows: repeat(auto 3);
-        grid-template-areas: "blg-date blg-title blg-img"
-        "blg-cont blg-cont blg-img"
-        "underline underline blg-readM";
-    }
-    .blg-underline{
-        margin-bottom: 10px;
-        margin-top: 5px;
-    }
-    .blg-readM{
-      justify-self: center;
-      align-self: end;
-    }
-    .blg-cont p{
-        padding: 0px;
-    }
-    .blg-date, .blg-title{
-        font-size: x-small;
-        font-weight: bold;
-    }
-
-    /* ------------============== BlogView =============-------------- */
-    .blog-view{
-        grid-template-rows: 5% 4% auto auto auto auto 5% 20%;
-        grid-template-areas:
-        ". logoB . . loginB ."
-        ". . blgV-title blgV-title blgV-title ."
-        ". . blg-article blg-article blg-article ."
-        ". . blg-article blg-article blg-article ."
-        ". . blg-view-side blg-view-side blg-view-side ."
-        ". . blg-article-cont blg-article-cont blg-article-cont ."
-        ". . blg-like blg-like blg-like ."
-        ". . blg-comment blg-comment blg-comment .";
-    }
-    .blgV-side{
-        display: none;
-    }
-    .blg-view-side{
-        margin-top: -100px;
-    }
-    .blg-article-cont{
-        margin-top: 50px;
-    }
-    .blg-like{
-        align-self: end;
-    }
-    .blg-comment{
-        margin-top: -100px;
-    }
+.article-head{
+    margin-bottom: 50px;
 }
+
+.art-item {
+    display: block 
+} 
+.art-image{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    border: 1px solid white;
+
+}
+.art-image img{
+    width: 95%;
+    height: 200px;
+}
+
+.showArt-container{
+    width: 80%;
+}
+   
+}
+
+@media(max-width: 650px){
+    .animated-title{
+        height: 230px;
+        width: 240px;
+    }
+    
+
+  
+}
+
 @media(max-width: 600px){
     /* ------======= About ========-------- */
     .about .about-content{
@@ -1537,19 +1443,7 @@ footer{
     .works .footer{
         margin: 50px 50px 60px 100px;
     }
-    /* ---------============= Blog View ==============----------- */
-    .blgV-title p{
-        text-align: right;
-        width: 150px;
-        grid-area: titleP;
-        align-self: center;
-    }
-    .blg-comment{
-        padding: 0px;
-    }
-    .blg-view-side{
-        margin-top: 150px;
-    }
+   
     /* --------------============= User login with Acc ===========--------- */
     
     .user-login .login-title{
@@ -1581,12 +1475,27 @@ footer{
         font-size: 0.5em;
     }
 
-}
-@media(max-width: 650px){
-    .animated-title{
-        height: 230px;
-        width: 240px;
+    /* ============---------- Articles list ----------------========= */
+
+    .articles aside{
+        display: none;
     }
+    .showArt aside{
+        display: none
+    }
+   
 }
 
-
+@media(max-width: 450px){
+    .article-head{
+        width: 50%;
+    }
+    .article-head form input{
+        width: 200px;
+        margin: 5px 0px;
+    }
+    .article-head form button{
+        width: 200px;
+    }
+  
+}

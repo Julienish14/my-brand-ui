@@ -13,9 +13,14 @@ blogs.then(res => {
         </div>
         <div class="art-info">
             <h3 class="art-title"> <a class="text-link" href="./showArticle.html">${blog.title}</a></h3>
-            <div class="art-meta"> <span class="date">Published ${date[2]} ${date[1]} ${date[3]}</span> <span class="art-comment"> 
-            <a class="text-link" href="#">${blog.comments.length} comments</a></span> 
-            <a class="text-link" href="#">${blog.likes.length} likes</a></span>
+            <div class="art-meta"> 
+                <span class="date">
+                    Published ${date[2]} ${date[1]} ${date[3]}
+                </span> 
+                <span class="art-comment"> 
+                    <a class="text-link" href="#">${blog.comments.length} comments</a> 
+                    <a class="text-link" href="#">${blog.likes.length} likes</a>
+                </span>
             </div>
             <div class="art-intro">${blog.content.slice(0, 200)}...</div>
             <a class="text-link readMore" href="./showArticle.html?blog_id=${blog._id}"> Read more &rarr;</a>

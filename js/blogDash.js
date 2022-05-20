@@ -1,5 +1,20 @@
-
 const jwt = localStorage.getItem("token");
+
+
+let blog = null;
+const blogApi = fetch(`${serverURL}/api/v1/articles/${window.location.search.split('=')[1]}`)
+  .then(data => data.json());
+
+ 
+
+const blogs = fetch(`${serverURL}/api/v1/articles`).then(data => data.json());
+
+blogApi.then(res => {
+  console.log(res)
+  blog = res.oneArticle;
+
+})
+
 
 const article_list = document.querySelector('.tab');
 
