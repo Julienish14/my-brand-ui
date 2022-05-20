@@ -22,12 +22,17 @@ commentsForm.addEventListener('submit', async (e) => {
           body: raw,
           redirect: 'follow'
         };
-        
+
+
         fetch(`${serverURL}/api/v1/articles/${blog_id}/comment`, requestOptions)
           .then(response => response.text())
-          .then(result => console.log(result),  
-            alert('Thank You for your comment...'),
-            location.reload()
+          .then(result => 
+                console.log(result),
+                alert('Thank You for your comment...'),
+                location.reload()
           )
-          .catch(error => console.log('error', error));
+          .catch(error => 
+            console.log('error', error),  
+              location.assign('../pages/user-login.html')
+          );
 })
