@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>julienishimwe | portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <link rel="shortcut icon" type="image" href="../img/title-logo.jpg">
-
-</head>
-<body class="articles">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" type="image" href="../img/title-logo.jpg" />
+  </head>
+  <body class="articles">
     <section>
-        <header>
-            <span> <a href="../index.html"> <img src="../img/logo.png" width="100px" height="70px" alt=""> </a></span>
-            <span><a href="./user-login.html">login</a></span>
-        </header>
-        <div class="blog-content">
+      <header>
+        <span>
+          <a href="../index.html">
+            <img src="../img/logo.png" width="100px" height="70px" alt="" /> </a
+        ></span>
+        <span><a href="./user-login.html">login</a></span>
+      </header>
+      <div class="blog-content"></div>
 
+      <aside>
+        <div class="socialmedia">
+          <a href="https://github.com/Julienish14" target="_blank"
+            ><i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/julien-ishimwe-34a0b118a/"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="#"><i class="fa-brands fa-slack"></i> </a>
+          <a href="https://twitter.com/julien_ishimwe" target="_blank"
+            ><i class="fa-brands fa-twitter"></i>
+          </a>
         </div>
-
-        <aside>
-           <div class="socialmedia">
-                <a href="https://github.com/Julienish14" target="_blank"><i class="fa-brands fa-github"></i> </a>
-                <a href="https://www.linkedin.com/in/julien-ishimwe-34a0b118a/" target="_blank"><i class="fa-brands fa-linkedin"></i> </a>
-                <a href="#"><i class="fa-brands fa-slack"></i> </a>
-                <a href="https://twitter.com/julien_ishimwe" target="_blank"><i class="fa-brands fa-twitter"></i> </a>
-           </div>
-           <div class="vert-line"></div>
-        </aside>
-        <div class="article-head">
-            <h2 class="art-welcome">Welcome to my blog post page</h2>
-            <p class="art-subscribe"> Subscribe to get my latest blog post in your inbox</p>
-            <form action="" id="subscribe">
-                <input type="text" id="email"  placeholder="Enter Your Email">
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-        <article class="art-list">
-            <div class="art-container">
-                <!-- <div class="art-item">
+        <div class="vert-line"></div>
+      </aside>
+      <div class="article-head">
+        <h2 class="art-welcome">Welcome to my blog post page</h2>
+        <p class="art-subscribe">
+          Subscribe to get my latest blog post in your inbox
+        </p>
+        <form action="" id="subscribe">
+          <input type="text" id="email" placeholder="Enter Your Email" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <article class="art-list">
+        <div class="art-container">
+          <!-- <div class="art-item">
                     <div class="art-image">
                         <img class="blog-image" src="../img/tech.jpeg" alt="image" width="160px" height="110px">
                     </div>
@@ -50,46 +63,50 @@
                         <a class="text-link readMore" href="./blogdisplay.html"> Read more &rarr;</a>
                     </div>
                 </div> -->
+        </div>
+      </article>
 
-            
-            </div>
-        </article>
-      
-        <footer>
-            <p>julish &copy copyright 2022.</p>
-            <div class="horiz-line"></div>
-        </footer>
+      <footer>
+        <p>julish &copy copyright 2022.</p>
+        <div class="horiz-line"></div>
+      </footer>
     </section>
     <script>
-        document.getElementById('subscribe').addEventListener("submit", (e) => {
-            e.preventDefault();
-                const email = document.getElementById('email').value;
+      document.getElementById("subscribe").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
 
-                var myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-                myHeaders.append("Cookie", "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJKdWxpZW4gaXNoaW13ZSIsImVtYWlsIjoianVsaXNoMTIzQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyNzEyNjU3NjNmNzY4MDhiOWI0YzA5MiIsImlhdCI6MTY1MjM0NDQ2MiwiZXhwIjoxNjUyNDMwODYyfQ.Qcgys9Htf5LA5EQFeXFxKLm_PMXo8FGv0L0sjno8bSw");
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append(
+          "Cookie",
+          "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJKdWxpZW4gaXNoaW13ZSIsImVtYWlsIjoianVsaXNoMTIzQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyNzEyNjU3NjNmNzY4MDhiOWI0YzA5MiIsImlhdCI6MTY1MjM0NDQ2MiwiZXhwIjoxNjUyNDMwODYyfQ.Qcgys9Htf5LA5EQFeXFxKLm_PMXo8FGv0L0sjno8bSw"
+        );
 
-                var raw = JSON.stringify({
-                "email": email
-                });
-
-                var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: raw,
-                redirect: 'follow'
-                };
-
-                fetch("https://my-brand-project.herokuapp.com/api/v1/subscribe", requestOptions)
-                .then(response => response.text())
-                .then(result => console.log(result),alert('Thank You for your subscription'),
-                location.reload()
-                )
-                .catch(error => console.log('error', error));
+        var raw = JSON.stringify({
+          email: email,
         });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        // fetch("https://my-brand-project.herokuapp.com/api/v1/subscribe", requestOptions)
+        fetch("http://localhost:4500/api/v1/subscribe", requestOptions)
+          .then((response) => response.text())
+          .then(
+            (result) => console.log(result),
+            alert("Thank You for your subscription"),
+            location.reload()
+          )
+          .catch((error) => console.log("error", error));
+      });
     </script>
     <script src="../js/globalVariable.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/articles.js"></script>
-</body>
+  </body>
 </html>
