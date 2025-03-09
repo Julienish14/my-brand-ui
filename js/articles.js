@@ -2,7 +2,6 @@ let article = document.querySelector(".art-container");
 const blogs = fetch(`${serverURL}/api/v1/articles`).then((data) => data.json());
 
 blogs.then((res) => {
-  // console.log(res);
   res.posts.map((blog) => {
     let date = `${new Date(blog.date)}`.split(" ");
     article.innerHTML += `<div class="art-item">

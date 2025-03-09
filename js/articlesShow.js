@@ -9,11 +9,7 @@ const blogApi = fetch(
 const blogs = fetch(`${serverURL}/api/v1/articles`).then((data) => data.json());
 
 blogApi.then((res) => {
-  console.log(res);
-
   blog = res.oneArticle;
-  console.log("Get me blog Img: ", blog.blogImage);
-
   blogCard.innerHTML += `
    <h2 class="showArt-title">${blog.title}</h2>
   <div class="showArt-intro">
