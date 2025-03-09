@@ -1,31 +1,36 @@
-let article = document.querySelector('.art-container');
-const blogs = fetch(`${serverURL}/api/v1/articles`)
+let article = document.querySelector(".art-container");
+const blogs = fetch(`${serverURL}/api/v1/articles`).then((data) => data.json());
 
-    .then(data => data.json());
-
-blogs.then(res => {
-    // console.log(res);
-    res.posts.map(blog => {
-        let date = `${new Date(blog.date)}`.split(" ");
-        article.innerHTML += `<div class="art-item">
+blogs.then((res) => {
+  // console.log(res);
+  res.posts.map((blog) => {
+    let date = `${new Date(blog.date)}`.split(" ");
+    article.innerHTML += `<div class="art-item">
         <div class="art-image">
-            <img class="blog-image" src="${serverURL}/uploads/${blog.blogImage}" alt="image" width="160px" height="110px">
+            <img class="blog-image" src="${
+              blog.blogImage
+            }" alt="image" width="160px" height="110px">
         </div>
         <div class="art-info">
-            <h3 class="art-title"> <a class="text-link" href="./showArticle.html">${blog.title}</a></h3>
+            <h3 class="art-title"> <a class="text-link" href="./showArticle.html">${
+              blog.title
+            }</a></h3>
             <div class="art-meta"> 
                 <span class="date">
                     Published ${date[2]} ${date[1]} ${date[3]}
                 </span> 
                 <span class="art-comment"> 
-                    <a class="text-link" href="#">${blog.comments.length} comments</a> 
+                    <a class="text-link" href="#">${
+                      blog.comments.length
+                    } comments</a> 
                     <a class="text-link" href="#">${blog.likes.length} likes</a>
                 </span>
             </div>
             <div class="art-intro">${blog.content.slice(0, 200)}...</div>
-            <a class="text-link readMore" href="./showArticle.html?blog_id=${blog._id}"> Read more &rarr;</a>
+            <a class="text-link readMore" href="./showArticle.html?blog_id=${
+              blog._id
+            }"> Read more &rarr;</a>
         </div>
-    </div>        `
-    
-    });
+    </div>        `;
+  });
 });
