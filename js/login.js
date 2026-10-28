@@ -1,10 +1,10 @@
-const loginform=document.querySelector('#form');
-loginform.addEventListener('submit', async (e) => {
-    e.preventDefault();
-const email = document.getElementById('email').value;
-  const password = document.getElementById('pwd').value;
-  if (email == '' || password == '') {
-    alert(warning, 'Please fill empty fields !!');
+const loginform = document.querySelector("#form");
+loginform.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("pwd").value;
+  if (email == "" || password == "") {
+    alert(warning, "Please fill empty fields !!");
     return 0;
   }
   try {
@@ -12,17 +12,17 @@ const email = document.getElementById('email').value;
       email,
       password,
     });
-    localStorage.setItem(`token`,`${res.data.token}`);
-    localStorage.setItem(`isAdmin`,`${res.data.user[0].isAdmin}`);
-    alert( 'Logged in successfully');
-    
+    localStorage.setItem(`token`, `${res.data.token}`);
+    localStorage.setItem(`isAdmin`, `${res.data.user[0].isAdmin}`);
+    // alert("Logged in successfully");
+
     setTimeout(() => {
-      if(localStorage.getItem("isAdmin") == "true"){
-        return location.assign('../admin/index.html');
+      if (localStorage.getItem("isAdmin") == "true") {
+        return location.assign("../admin/index.html");
       }
-      location.assign('../pages/articles.html');
-    }, 3000);
-    
+      location.assign("../pages/articles.html");
+    }, 1000);
+    console.log(user);
   } catch (error) {
     console.log(error);
     if (error.response?.status === 401) {
@@ -31,18 +31,4 @@ const email = document.getElementById('email').value;
       alert(`${error.message}`);
     }
   }
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
