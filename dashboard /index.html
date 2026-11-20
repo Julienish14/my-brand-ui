@@ -224,6 +224,28 @@
     </section>
 
     <div class="app-shell" id="app-shell" hidden>
+      <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+        <div class="workspace-chip">
+          <span class="status-dot"></span
+          ><span class="brand-copy">WORKSPACE ACTIVE</span
+          ><small class="brand-copy" id="workspace-role">ADMIN</small>
+        </div>
+        <nav class="main-nav" id="main-nav"></nav>
+        <div class="sidebar-foot">
+          <div class="storage-meter">
+            <div>
+              <span class="mono-label">LOCAL STORAGE</span
+              ><span id="storage-size">0 KB</span>
+            </div>
+            <span class="meter-track"><i id="storage-meter-fill"></i></span>
+            <p>Your changes are saved on this device.</p>
+          </div>
+          <button class="collapse-button" id="collapse-button" type="button">
+            <svg class="icon"><use href="#i-panel" /></svg
+            ><span class="brand-copy">Collapse sidebar</span>
+          </button>
+        </div>
+      </aside>
       <button
         class="sidebar-scrim"
         id="sidebar-scrim"
