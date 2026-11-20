@@ -175,7 +175,7 @@
           <span class="brand-mark" aria-hidden="true"
             ><i></i><i></i><i></i
           ></span>
-          <span>JULISH<small>PORTFOLIO OS / 01</small></span>
+          <span>NORTHSTAR<small>PORTFOLIO OS / 01</small></span>
         </a>
         <div class="login-narrative">
           <p class="eyebrow">
@@ -214,7 +214,40 @@
             </button>
           </div>
           <div class="divider"><span>OR CONTINUE WITH EMAIL</span></div>
-
+          <form id="login-form" novalidate>
+            <label class="field"
+              ><span>Email address</span
+              ><input
+                id="login-email"
+                name="email"
+                type="email"
+                autocomplete="username"
+                placeholder="you@example.com"
+                required
+            /></label>
+            <label class="field"
+              ><span>Password</span
+              ><span class="password-wrap"
+                ><input
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Enter your password"
+                  required /><button
+                  class="password-toggle"
+                  id="password-toggle"
+                  type="button"
+                  aria-label="Show password"
+                >
+                  <svg class="icon"><use href="#i-eye" /></svg></button></span
+            ></label>
+            <p class="form-error" id="login-error" role="alert"></p>
+            <button class="button button--primary button--wide" type="submit">
+              <span>Enter workspace</span
+              ><svg class="icon"><use href="#i-arrow" /></svg>
+            </button>
+          </form>
           <p class="access-note">
             <svg class="icon"><use href="#i-lock" /></svg> Demo data stays in
             this browser. Clearing site data resets the workspace.
@@ -236,7 +269,7 @@
               ><i></i><i></i><i></i
             ></span>
             <span class="brand-copy"
-              >JULISH<small>PORTFOLIO OS / 01</small></span
+              >NORTHSTAR<small>PORTFOLIO OS / 01</small></span
             >
           </a>
           <button
