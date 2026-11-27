@@ -327,7 +327,18 @@
               <svg class="icon"><use href="#i-menu" /></svg>
             </button>
           
-         
+          <div class="global-search" id="global-search-wrap">
+            <svg class="icon"><use href="#i-search" /></svg>
+            <input
+              id="global-search"
+              type="search"
+              placeholder="Search your workspace…"
+              aria-label="Search workspace"
+              autocomplete="off"
+            />
+            <kbd>⌘ K</kbd>
+            <div class="search-results" id="search-results" hidden></div>
+          </div>
           <div class="topbar-actions">
             <button
               class="icon-button"
