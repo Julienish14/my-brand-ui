@@ -368,7 +368,22 @@
                   ><small id="topbar-role">Administrator</small></span
                 ><svg class="icon"><use href="#i-down" /></svg>
               </button>
-          
+              <div class="popover profile-popover" id="profile-popover" hidden>
+                <button type="button" data-profile-action="profile">
+                  <svg class="icon"><use href="#i-user" /></svg>My profile
+                </button>
+                <button type="button" data-profile-action="export">
+                  <svg class="icon"><use href="#i-download" /></svg>Export
+                  workspace
+                </button>
+                <button
+                  type="button"
+                  data-profile-action="logout"
+                  class="danger-text"
+                >
+                  <svg class="icon"><use href="#i-logout" /></svg>Sign out
+                </button>
+              </div>
             </div>
           </div>
         </header>
