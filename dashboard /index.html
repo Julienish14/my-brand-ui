@@ -312,6 +312,51 @@
         aria-label="Close navigation"
         tabindex="-1"
       ></button>
+
+      <div class="app-stage">
+        <header class="topbar">
+          <div class="topbar-start">
+            <button
+              class="icon-button mobile-menu"
+              id="mobile-menu"
+              type="button"
+              aria-label="Open navigation"
+              aria-controls="sidebar"
+              aria-expanded="false"
+            >
+              <svg class="icon"><use href="#i-menu" /></svg>
+            </button>
+          
+         
+          <div class="topbar-actions">
+            <button
+              class="icon-button"
+              id="theme-toggle"
+              type="button"
+              aria-label="Switch to light theme"
+            >
+              <svg class="icon"><use href="#i-sun" /></svg>
+            </button>
+            <div class="popover-wrap">
+             
+              <div
+                class="popover notification-popover"
+                id="notification-popover"
+                hidden
+              ></div>
+            </div>
+            <div class="popover-wrap">
+              
+          
+            </div>
+          </div>
+        </header>
+        <main class="main-content" id="main-content" tabindex="-1">
+          <div id="view" class="view"></div>
+        </main>
+      </div>
+    </div>
+
     </div>
   </body>
 </html>
